@@ -1,0 +1,122 @@
+一.第一次通过‘git remote add origin 远程仓库地址 master’添加远程仓库,再输入git push -u origin master时，出现以下报错：
+
+报错信息: Permission to xxxxxx denied to s23355
+        fatal: unable to access 'https://xxxxxxxxxxxxxxxx.' The requested URL returned error:403 
+
+问题原因一：电脑已经注册过git账号，本地上已经保存了该账号信息，且已经配置过SSH Key。当再重新在本机上添加一个新git 账号添加远程仓库时，会导致信息不一致，而报错
+
+
+解决方式：1.打开cmd命令窗口
+         2.输入 rundll32.exe keymgr.dll,KRShowKeyMgr   ，按回车键
+         3.会弹出一个窗口，将git相关条数删除。
+         4.重新在Git Bash Here 窗口中输入git push -u origin master指令
+         5.弹出一个新窗口，输入git的用户名和密码
+
+
+
+
+
+二、git push 本地仓库的分支到远程康库时，出现以下报错：
+
+报错信息：
+! [rejected]        master -> master (fetch first)
+error: failed to push some refs to 'https://github.com/sunjiali-work/study.git'
+hint: Updates were rejected because the remote contains work that you do
+hint: not have locally. This is usually caused by another repository pushing
+hint: to the same ref. You may want to first integrate the remote changes
+hint: (e.g., 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+
+
+问题原因：本地仓和远程仓是两个独立的仓库。当我们在github版本库中发现一个问题后，你在github上对它进行了在线的修改；或者你直接在github上的某个库中添加readme文件或者其他什么文件，但是没有对本地库进行同步。这个时候当你再次有commit想要从本地库提交到远程的github库中时就会出现push失败的问题。
+
+解决方式：
+1.先对本地和远程仓库进行整理合并：git pull --rebase origin master  （把远程库中的更新合并到本地库中，–rebase的作用是取消掉本地库中刚刚的commit，并把他们接到更新后的版本库之中。）
+2.再进行git push origin master
+
+
+
+
+
+三、git pull 将远程仓的文件拉取到本地仓：
+报错信息：fatal: refusing to merge unrelated histories
+
+问题原因：如果从没把本地仓commit到远程仓，或者远程仓上创建了新文件没有clone到本地仓，导致两个仓的项目没有相关的关联记录，
+那就需要把两个不同的项目合并，告诉 git 允许不相关历史合并（–allow-unrelated-histories）
+
+解决方式：1.输入指令：git pull origin master –allow-unrelated-histories
+
+
+相关博客地址：https://www.cnblogs.com/frankltf/p/9674305.html
+             https://blog.csdn.net/u012145252/article/details/80628451 （推荐看这个）
+
+
+四、git push时的报错：
+
+报错信息：fatal: 'origin' does not appear to be a git repository
+　　fatal: Could not read from remote repository.
+　　Please make sure you have the correct access rights and the repository exists
+
+问题原因：
+
+解决方式：1.重新输入一遍指令：git remote add origin 远程仓地址
+        2.git push -u origin master
+
+博客地址：https://blog.csdn.net/dream_follower/article/details/53907217
+
+
+
+
+
+五、如何创建SSH Key:
+1.打开cmd窗口
+2.检查本地是否有SSH Key,输入命令：ls -al ~/.ssh 
+3.如果本地没有SSH Key，就会提示‘No such file or directory’
+4.生成SSH Key,输入命令：ssh-keygen -t rsa -C "your_email@example.com"     （注意：your_email@example.com 为你在 GitHub或者GitLab 注册时的邮箱）
+5.按回车键
+6.会出现以下提示：Generating public/private rsa key pair.
+
+Enter file in which to save the key (/Users/xxx/.ssh/id_rsa):
+
+7.提示你保存 .ssh/id_rsa 的路径是/Users/xxx/.ssh/id_rsa，你就直接按回车。
+如果已经存在SSH key你想要使用以上操作重新生成的话会提示一你不是要重新生成，直接输入y并按回车。
+8.出现以下提示：
+Created directory '/Users/xxx/.ssh'.
+
+Enter passphrase (empty for no passphrase):
+
+提示设置 passphrase，每次与 Git 通信都会要求输入 passphrase，以避免某些错误的操作所导致的问题，建议设置一下。
+
+9.按回车键
+10.出现以下提示：
+Your identification has been saved in /Users/xxx/.ssh/id_rsa.
+
+Your public key has been saved in /Users/xxx/.ssh/id_rsa.pub.
+
+The key fingerprint is:
+
+16:27:ac:a5:76:28:2d:36:63:1b:56:4d:eb:df:a6:48 your_email@example.com
+
+The key's randomart image is:
+
+心形图形
+
+11.然后再输入命令：ssh-agent bash  （不输这句话，直接跳到下一步骤，会出现报错：Could not open a connection to your authentication agent）
+
+12.输入命令：ssh-add ~/.ssh/id_rsa
+13.这时会提示，并要求你输入上面的步骤中设置的passphrase，输入passphrase 后，按回车键
+14.cmd会提示：Identity added: /Users/xxx/.ssh/id_rsa (/Users/xxx/.ssh/id_rsa)
+
+这时，在 /Users/xxx/.ssh/ 生成两个文件，id_rsa 和 id_rsa.pub
+15.你最后在cmd命令窗口，再输入命令：cat /Users/xxx/.ssh/id_rsa.pub
+
+16.输入以上命令，终端就会显示你的SSH key，直接复制SSH Key,添加到gitHub账户中即可
+
+相关博客：
+
+https://www.cnblogs.com/zheng577564429/p/8317524.html
+
+https://www.cnblogs.com/sheldonxu/archive/2012/09/17/2688281.html
+
+ 

@@ -1,0 +1,81 @@
+1.软件开发的流程
+2.服务器：域名/IP地址、端口号、协议
+3.数据存储的形式：
+A.内存：临时存储数据
+B.特定文件
+C.第三方服务器
+D.数据库服务器
+
+4.mySQL和mariaDB
+5.服务器套装：xampp
+6.建立快捷方式：xampp.control 快捷方式发送到桌面
+
+启动mySQL:
+1. 启动数据库服务器 ，xampp->点击start 启动的就是C:/xampp/mysql/bin/mysqld.exe 文件
+mysqld.exe mysql服务器端：存储/维护数据
+mysql.exe 客服端：负责向数据库发起增删改查的请求
+2.确保mysql服务器端口号不被占用
+3.使用客户端连接服务器端:
+xampp -> shell->输入命令：
+mysql.exe -h127.0.0.1 -P3306 -uroot -p   (不用加分号结尾)
+或者mysql.exe -hlocalhost -P3306 -uroot -p   (不用加分号结尾)
+
+-h host 主机(ip地址/域名,可以用localhost代替)
+-P port 端口号
+-u user 用户名
+-p password 密码
+
+简写方式：mysql -uroot  (不用加分号结尾)
+4.退出数据库，输入命令：quit;
+
+
+mySQL常用管理命令：
+show databases;显示服务器上所有的数据库
+quit; 退出服务器连接
+user 数据库名; 进入指定的数据库
+show tables;显示当前数据库中的所有的表
+desc 表名; 查看
+
+SQL命令的两种执行方式
+1.交互模式
+2.脚本模式：
+A.创建一个以.sql为后缀名的文件
+B.往文件里写sql命令
+C.xampp->shell: 输入命令mysql -uroot<
+D.先别按回车键，直接往mysql -uroot<拖入sql脚本文件
+E.会形成mysql -uroot<C:\xampp\htdocs\xx.sql 这样的命令，按回车键
+
+
+SQL语法规范：
+1.sql脚本中的多行注释：/**/  (注释的sql命令不会被执行)
+2.sql脚本中的单行注释 #
+3.每条sql语句必须以;结尾。一句sql语句也可以跨越多行
+4.sql 不区分大小写，推荐使用关键字大写
+5.如果某一条sql语句出现语法错误，则这条语句以及后边所有的命令都不会再执行。
+
+
+常用SQL命令：
+
+1.判断是否数据库已存在,如果已存在,就删除数据库：DROP DATABASE IF EXISTS 数据库名字;
+2.创建数据库：CREATE DATABASE 数据库名字;
+3.进入数据库：use 数据库名字;
+4.创建表，给表指定表头/列名：CREATE TABLE 表名();
+5.插入数据：INSERT INTO 表名 VALUES();
+6.修改数据:UPDATE 表名 SET 列名1='',列名2=''  WHERE 条件语句;
+7.删除数据：DELETE FROM 表名 WHERE 列名1='';
+8.查询数据：SELECT * FROM 表名;
+
+
+
+
+
+
+
+
+
+注意事项：
+
+1.画图去回顾前后端数据交互的过程
+2.进入mysql后各种都输错
+3.c:/xampp/mysql/data 可以看到创建了哪些数据库
+4.

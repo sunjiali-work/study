@@ -1,0 +1,209 @@
+﻿
+1.VCS：Version Control System
+2.VCS常见的工具:CVS、SVN、GIT
+3.SVN：中央式服务器
+GIT：分布式
+4.Git软件中的概念(重点，难点)
+ 工作目录: 被Git管理的项目目录
+ 暂存区: 临时存放被修改的文件
+ 本地仓库: 用于存储提交的记录
+
+
+
+一、第一次使用Git的步骤
+1.下载Git
+2.验证Git是否已经安装：打开cmd命令窗口，输入命令git
+3.创建一个文件夹，存放要被Git管理的代码--》打开文件夹--》单击右键--》选择Git Bash Here 
+4.在Git Bash Here 打开的窗口中，按步骤输入以下命令
+
+git config --global user.name  xxx
+git config --global user.email xxxx@163.com
+git config --list 查看Git所有配置
+git init   初始化git仓库，使用git管理当前目录(工作目录)
+
+
+Git常用的管理命令：
+git init：    初始化git仓库，使用git管理当前xx目录(工作目录)
+git status：  查看工作目录中文件的状态(是否被跟踪，是否修改)
+git add 文件名1 文件名称2 ：将多个文件提交到暂存区 （绿色）
+git add 目录名： 将某一个目录提交到暂存区 
+git commit -m 文字说明：将文件/目录从暂存区提交到本地仓库，同时添加说明
+git log:查看提交到本地仓库的所有记录
+git reset --hard  版本编号：从本地仓库中提取信息，使工作目录中的文件恢复到某一版本
+git reflog:显示所有提交和恢复的信息
+git checkout 文件名称:从暂存区提取信息，恢复到工作目录中。
+git rm --cached 文件名称：删除缓存区的某一个文件
+
+
+管理分支：
+git branch ：查看所有分支
+git branch  分支名:创建一个新的叫XXX的分支
+git checkout 分支名：切换到XXX分支
+
+ 合并分支和删除分支都有一个前提：先要切换到主分支，再执行分支的合并和删除操作。
+
+ git merge 分支名xxx: 将xxx分支合并到某个分支 
+
+ git branch -d 分支名：删除xxx分支
+
+
+  例如，要合并 user 分支到master分支下(其中master是主分支):
+  A.那么就要先切换到主分支git checkout master
+  B.git merge user 将user分支合并到master主分支下 （删除是同理，如果将user分支从master主分支删除，也要先切换到master主分支再执行操作）
+
+
+ 二、在gitHub上创建远程仓库： 
+ 1.my respositoris -> 点击按钮 New ->输入新的远程仓库名Repository name  -> 添加 Description  - >选择public  ->勾选Initialize this repository with a README -> 然后"Add .gitignore" 和“Add a License”两选项，都选择None  -> 点击Create respository 
+
+
+
+在git的命令窗口输入以下命令
+git remote add origin https://github.com/xxxx/xuezi.git :添加远程仓库，并给远程仓库起一个别名叫origin。远程仓库的地址是https://github.com/xxxx/xuezi.git
+
+把本地仓库中的分支master添加到远程仓库（两种写法）
+1.git push -u origin master：把本地仓库中的分支master添加到远程仓库origin中 （master是本地仓库的一个主分支名）
+2.git  push  远程仓库地址  master: master是本地仓库的一个主分支名，推荐使用master分支名
+
+
+ 
+
+2.远程仓库地址https://github.com/xxxxxxxxx.git
+
+三、添加远程仓库
+git remote add origin https://github.com/xxxx/xuezi.git
+
+四、将本地仓库的分支master中的文件+版本推送到远程仓库xz: git push -u origin master
+
+
+git push 远程仓库地址  本地仓库分支名
+git push 远程仓库别名 master
+
+
+五、将远程仓库克隆到本地仓库master分支
+  A.Git Bash Here 打开命令窗口
+  B.git  clone  公共仓库地址 : 克隆公共仓库中的所有内容到本地——得到一个完整的仓库
+
+六、git  pull 公共仓库地址/origin   本地仓库分支名：把远程仓库origin中文件+版本拉取到本地仓库的xxx分支中
+
+
+
+
+
+
+
+
+ gitHub上允许添加项目成员加入自己的项目
+  2.setting -->Collaborators--> 输入关键字搜索其他人的账户-->点击Add collaborator按钮
+  3.其他成员push自己的分支到远程仓库
+
+
+
+
+  注意事项：
+1.git的使用也有思路和步骤，先分析思路和步骤，再操作
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+6.其他命令
+git config
+git config --list：查看已有的配置信息
+clear ：清除Git命令窗口中的信息
+q ：退出
+
+
+
+
+
+如何创建SSH Key
+https://www.cnblogs.com/zheng577564429/p/8317524.html
+
+https://www.cnblogs.com/sheldonxu/archive/2012/09/17/2688281.html
+
+
+
+
+
+Untracked files:未被追踪的文件
+
+
+modified xxx  changes in working directory
+
+cached <file>:缓存区的文件
+
+No commits yet 还未被提交到本地仓库
+
+
+nothing to commit, working tree clean 没有需要提交的文件，工作区很干净
+HEAD is now at 689d0d1 xxx Master->Master: 当前提交的文件是在版本号689d0d1  在master分支中
+
+* master：当前所在的分支是master
+user
+
+
+
+
+
+七、git clone 和git pull 的区别（blog:https://blog.csdn.net/JayInnn/article/details/81669898）：
+
+（一）简单粗暴理解
+
+git clone 是本地没有 repository 时，将远程 repository 整个下载过来。
+
+git pull 是本地有 repository 时，将远程 repository 里新的 commit 数据(如有的话)下载过来，并且与本地代码merge。
+
+ 
+
+（二）详细理解
+
+从字面意思也可以理解，都是往下拉代码，git clone是克隆，git pull 是拉。
+但是，也有区别：
+从远程服务器克隆一个一模一样的版本库到本地,复制的是整个版本库，叫做clone.（clone是将一个库复制到你的本地，是一个本地从无到有的过程）
+从远程服务器获取到一个branch分支的更新到本地，并更新本地库，叫做pull.（pull是指同步一个在你本地有版本的库内容更新的部分到你的本地库）
+
+
+git pull相当于是从远程获取最新版本并merge（合并）到本地     git pull = git fetch + git merge，git fetch更安全一些
+git clone是远程操作的第一步，通常是从远程主机克隆一个版本库，eg:$ git clone ##   该命令会在本地主机生成一个目录，与远程主机的版本库同名，如果要是制定不同的目录名，可以将目录名作为git clone 命令的第二个参数。eg：$ git clone #版本库网址# #本地目录名#     git clone支持多种协议，除了http（s),还有ssh,git,本地协议。
+git pull 作用是，取回远程主机某个分支的更新，再与本地的指定分支合并。它的完整格式稍稍有点复杂。eg:$ git pull ##远程主机（origin） #远程分之(next)#：#本地分之(master)#
+
+
+
+八.实践
+1.创建一个master主分支，再建一个tedu的分支
+2.查看当前分支
+3.切换到master分支
+4.将tedu分支合并到master分支
+5.切换到tedu分支
+6.创建一个note的目录
+7.note目录再建一个git的目录
+8.git status 查看下工作区的状态
+9.git add将note目录提交到暂存区
+10.git commit -m Git笔记 提交到本地仓
+11.gitHub添加一个新的study远程仓:https://github.com/xxxxx/xxxx
+12.添加远程仓库
+13.push 到远程仓
+
+
+
+
+
+报错：$ git push -u origin master
+To https://github.com/xxxxx/study.git
+ ! [rejected]        master -> master (fetch first)
+error: failed to push some refs to 'https://github.com/xxxxxx/study.git'
+hint: Updates were rejected because the remote contains work that you do
+hint: not have locally. This is usually caused by another repository pushing
+hint: to the same ref. You may want to first integrate the remote changes
+hint: (e.g., 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
