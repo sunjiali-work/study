@@ -79,6 +79,25 @@
                 </div>
             </div>
         </div>
+
+
+   <!--二级菜单-->
+        <div class="snd_nav">
+            <div class="sndnav_content">
+                <!--向上箭头-->
+                <div class="snd_nav_up"></div>
+                <!--二级菜单内容-->
+                <ul class="sndnav_list">
+                    <li class="sndnav_item"><a href="" class="sndnav_link"></a></li>
+                    <li class="sndnav_item"><a href="" class="sndnav_link"></a></li>
+                    <li class="sndnav_item"><a href="" class="sndnav_link"></a></li>
+                    <li class="sndnav_item"><a href="" class="sndnav_link"></a></li>
+                    <li class="sndnav_item"><a href="" class="sndnav_link"></a></li>
+                    <li class="sndnav_item"><a href="" class="sndnav_link"></a></li>
+                </ul>
+            </div>
+
+        </div>
     </nav>
 
 
@@ -89,5 +108,17 @@
 <script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
 <!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
+<script>
+    /*鼠标移入登录按钮区域，就出现下拉列表*/
+    $(".nav_person_title").hover(function () {
+        $(".nav_person_area").css("display", "block");
+    });
+/*登录选项的下拉列表鼠标移开时，就隐藏*/
+    $(".nav_person").mouseleave(function () {
+
+        $(".nav_person_area").css("display", "none");
+    });
+
+</script>
 </body>
 </html>
