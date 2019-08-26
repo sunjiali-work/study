@@ -1,0 +1,456 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="b35fac27-9350-45c0-8768-686fd05de320" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/109951163115654967.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/109951164005683028.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/109951164005826925.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/109951164007455283.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/109951164008987059.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/109951164009637404.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/18582846023047943.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/190d06f6509e4c90ab8f37d0898af819.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/19106213556354168.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/5509c81b71b440f1b90d2b1a1ec12008.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/act_pic_fail.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/ban.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/ban_mask.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/banner-aos.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/banner-aos.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/banner-ios.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/banner-ios.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/banner-pc.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/banner-pc.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/bg.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/bg.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/bg_blank.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/black-r-icon@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/btn_enter.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/btn_enter_hvr.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/btn_fav.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/btn_fav_hvr.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/bub.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/bub2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/bub3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/button.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/button2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/button3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/button5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/cash.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/cnt_radio.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/code.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/cover_sel.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/coverall.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/coverall_8.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/date.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/date2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/date2_mask.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/date_mask.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/default_act_pic.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/deny-copy.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/dot2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/down_btn.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/down_btn8.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/e650ce85d4524eea8f25156aeebc045c.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/emtbg.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/emtbg_right.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/emtbg_up.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/foot_enter.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/foot_enter_new.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/foot_enter_tt.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/frd_activity_mask.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/frd_cover_btn_play.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/frd_cover_mask.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/frd_dyn_sprite.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/frd_dyn_sprite_ie.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/frd_mv_btn_play.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/frd_show_cls.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/frd_show_dld.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/frd_slide_left.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/frd_slide_right.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/frduser.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/guide_fav.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/guide_fav_8.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/guide_update.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/guide_update_8.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/head2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/highlight.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/icn_daren.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/icn_musician.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/icn_ply.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/icn_ply2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/icn_ply2_hvr.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/icn_ply4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/icn_ply4_hvr.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/icn_ply5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/icn_ply5_hvr.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/icn_ply6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/icn_ply6_hvr.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/icn_ply_hvr.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/icn_vip.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/icon2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/icon3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/iconall.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/iconall_8.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/ie6tip.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/import.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/import_logo.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/layer.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/layer_8.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/loading.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/loading2.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/loading3.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/loading_showpic.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/mask.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/mymusic.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/notlogin.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/pc_btn.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/pic_default.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/pic_loading.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/platform.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/playbar.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/playbar_8.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/playlist.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/playlist_8.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/playlist_bg.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/playlist_bg_8.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/ply_btn.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/ply_btn_hvr.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/qrcode_def.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/qtcode86.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/recmd_birthday.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/recmd_daily.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/share_bg.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/show_pic_fail.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/singer.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/singlecover.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/slider.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/slider_invalid.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/slider_valid.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/sltlyr.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/sltlyr_8.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/sns.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/spe_mv_msk.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/sprite.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/statbar.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/statbar_8.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/tab.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/table.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/topbar.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/toplist.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/vol_btn.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/vol_btn_hvr.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/white-r-icon@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/wrap1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/wrap10.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/wrap2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/wrap3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/wrap4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/wrap5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/wrap6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/zt_taste_sprite.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/1.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/header.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/toplist.html" beforeDir="false" />
+    </list>
+    <ignored path="$PROJECT_DIR$/.tmp/" />
+    <ignored path="$PROJECT_DIR$/temp/" />
+    <ignored path="$PROJECT_DIR$/tmp/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <splitter split-orientation="horizontal" split-proportion="0.4652072">
+      <split-first>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/package.json">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="342">
+                  <caret line="18" selection-start-line="18" selection-end-line="18" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/public/header.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="514">
+                  <caret line="43" selection-start-line="43" selection-end-line="43" />
+                  <folding>
+                    <element signature="n#ul#0;n#div#0;n#nav#0;n#div#0;n#body#0;n#html#0;n#!!top" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/node_modules/bootstrap/dist/css/bootstrap.css">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="76323">
+                  <caret line="4017" column="1" selection-start-line="4017" selection-start-column="1" selection-end-line="4017" selection-end-column="1" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/node_modules/bootstrap/package.json">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="2166">
+                  <caret line="114" column="12" lean-forward="true" selection-start-line="114" selection-start-column="12" selection-end-line="114" selection-end-column="34" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/public/stylesheets/comm.css">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="95">
+                  <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/public/stylesheets/header.css">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="452">
+                  <caret line="127" column="17" selection-start-line="127" selection-start-column="17" selection-end-line="127" selection-end-column="17" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>nav_content</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/public/stylesheets/comm.css" />
+        <option value="$PROJECT_DIR$/public/header.html" />
+        <option value="$PROJECT_DIR$/public/stylesheets/header.css" />
+      </list>
+    </option>
+  </component>
+  <component name="JsFlowSettings">
+    <service-enabled>true</service-enabled>
+    <exe-path />
+    <other-services-enabled>true</other-services-enabled>
+    <auto-save>true</auto-save>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-10" />
+    <option name="y" value="-10" />
+    <option name="width" value="1695" />
+    <option name="height" value="490" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="netease_music" type="b2602c69:ProjectViewProjectNode" />
+              <item name="netease_music" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="netease_music" type="b2602c69:ProjectViewProjectNode" />
+              <item name="netease_music" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="netease_music" type="b2602c69:ProjectViewProjectNode" />
+              <item name="netease_music" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="stylesheets" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="javascript.nodejs.core.library.configured.version" value="10.15.3" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/node_modules" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.jscs" value="true" />
+    <property name="node.js.detected.package.standard" value="true" />
+    <property name="node.js.detected.package.stylelint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.jscs" value="project" />
+    <property name="node.js.path.for.package.standard" value="project" />
+    <property name="node.js.path.for.package.stylelint" value="project" />
+    <property name="node.js.selected.package.eslint" value="" />
+    <property name="node.js.selected.package.jscs" value="" />
+    <property name="node.js.selected.package.standard" value="" />
+    <property name="node.js.selected.package.stylelint" value="$PROJECT_DIR$/node_modules" />
+    <property name="nodejs_interpreter_path" value="node" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="settings.nodejs" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\sunjiali\WebstormProjects\netease_music\public\stylesheets" />
+      <recent name="C:\Users\sunjiali\WebstormProjects\netease_music\public\images" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b35fac27-9350-45c0-8768-686fd05de320" name="Default Changelist" comment="" />
+      <created>1566620347929</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1566620347929</updated>
+      <workItem from="1566620400422" duration="1489000" />
+      <workItem from="1566622043317" duration="15504000" />
+      <workItem from="1566748210356" duration="1190000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="18183000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15343915" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="npm" order="2" side_tool="true" />
+      <window_info id="Favorites" order="3" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32907802" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.32954547" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/public/stylesheets/style.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package-lock.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="16" column="24" selection-start-line="16" selection-start-column="24" selection-end-line="16" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/bootstrap/CHANGELOG.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor />
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/bootstrap/less/forms.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-285" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="18" selection-start-line="18" selection-end-line="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/bootstrap/dist/css/bootstrap.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76323">
+          <caret line="4017" column="1" selection-start-line="4017" selection-start-column="1" selection-end-line="4017" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/bootstrap/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2166">
+          <caret line="114" column="12" lean-forward="true" selection-start-line="114" selection-start-column="12" selection-end-line="114" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/header.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="514">
+          <caret line="43" selection-start-line="43" selection-end-line="43" />
+          <folding>
+            <element signature="n#ul#0;n#div#0;n#nav#0;n#div#0;n#body#0;n#html#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/stylesheets/comm.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/stylesheets/header.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="452">
+          <caret line="127" column="17" selection-start-line="127" selection-start-column="17" selection-end-line="127" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
