@@ -25,7 +25,6 @@
     background-image: url(../images/topbar.png);
     background-repeat: no-repeat;
 
-
 }
 
 .mynav-tabs {
@@ -45,7 +44,6 @@
     padding: 0 19px;
     line-height: 70px;
 }
-
 
 .mynav-tabs > li > a {
     border: 0;
@@ -121,14 +119,153 @@
 
 }
 
-.nav_btn{
-    width:90px;
-    height:32px;
-    margin-left:12px;
+.nav_btn {
+    width: 90px;
+    height: 32px;
+    margin-left: 12px;
     padding-left: 16px;
-    border:1px solid #ccc;
+    border: 1px solid #ccc;
     border-radius: 17px;
-    font-size:12px;
-    color:#ccc;
+    font-size: 12px;
+    color: #ccc;
     line-height: 32px;
+}
+
+.nav_person {
+    margin-left: 20px;
+    positive: relative;
+}
+
+.nav_person_title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*没登录前,显示登录链接*/
+.nav_person_login {
+    display: inline-block;
+    width: 28px;
+    height: 15.45px;
+    font-size: 12px;
+    color: #787878;
+    /*text-decoration: underline;*/
+
+}
+
+/*鼠标移入时*/
+.nav_person_login:hover {
+
+}
+
+.person_item_link {
+
+}
+
+/*登录成功以后显示头像*/
+.nav_person_img {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-image: url(../images/18686200114669622.jpg);
+    background-repeat: no-repeat;
+    display: none;
+
+}
+
+.nav_person_sign {
+    display: inline-block;
+    width: 21.99px;
+    height: 30px;
+    z-index: 2;
+    /*background-color:#fff;*/
+    background-image: url(../images/topbar.png);
+    background-position: 102% 25%;
+    background-repeat: no-repeat;
+    /*position: relative;*/
+    /*top: 0%;*/
+    /*left: 0%;*/
+}
+
+.nav_person_area{
+    position: absolute;
+    top:64px;
+    left:1227px;
+}
+
+/*个人登录选项列表*/
+.nav_person_list {
+    width: 158px;
+    height: 200px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: 1px solid #202020;
+    background: #2b2b2b;
+}
+
+/*向上箭头*/
+.nav_person_up {
+    width: 20px;
+    height: 10px;
+    background-image: url(../images/toplist.png);
+    background-repeat: no-repeat;
+    background-position:0% 0%;
+    position: absolute;
+    top:-10px;
+    left: 0;
+    background-color: #000;
+    border:1px solid #f00;
+
+}
+
+.nav_person_item {
+    width: 100%;
+    border-bottom: 1px solid rgb(35, 35, 35);
+
+}
+
+.nav_person_item:hover {
+    background: #3a3a3a;
+
+}
+
+.person_item_link {
+    display: inline-block;
+    height: 38px;
+    padding-left: 24px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    color: #ccc;
+    font-size: 12px;
+}
+
+.person_item_link > span {
+    display: inline-block;
+}
+
+/*鼠标移入时,字体变亮*/
+.person_item_link:hover {
+    color: #fff;
+}
+
+/*多种登录方式的图片*/
+.person_item_img {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    margin-right: 10px;
+    margin-left: -7px;
+    background-image: url(../images/toplist.png);
+    background-color: #fff;
+}
+
+/*给不同的登陆选项插背景图*/
+
+.nav_person_list > li:nth-child(1) > a > div {
+    background-position: 0% 0%;
+    background-repeat: no-repeat;
 }
