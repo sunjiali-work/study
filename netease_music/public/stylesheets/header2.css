@@ -10,7 +10,7 @@
     /*background-color: #000;*/
     margin: 0 auto;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
 
 }
@@ -137,7 +137,7 @@
 
 .nav_person {
     margin-left: 20px;
-    position: relative;
+    positive: relative;
 }
 
 .nav_person_title {
@@ -192,29 +192,22 @@
     /*left: 0%;*/
 }
 
-/*
 .nav_person_area {
     position: absolute;
     top: 56px;
     left: 965px;
-    display: block;
+    display: none;
 }
 
-*/
 /*个人登录选项列表*/
 .nav_person_list {
-    display: none;
     width: 158px;
     height: 200px;
     position: absolute;
-    top: 39px;
-    left: -63px;
+    top: 0;
+    left: 0;
     border: 1px solid #202020;
     background: #2b2b2b;
-}
-
-.nav_person_list > li:first-child {
-    position: relative;
 }
 
 /*向上箭头*/
@@ -226,7 +219,7 @@
     background-position: 54% -1%;
     position: absolute;
     top: -9px;
-    left: 67px;
+    left: 69px;
 
     z-index: 2;
 
@@ -321,12 +314,12 @@
     height: 7px;
 
     background-image: url(../images/topbar.png);
-    background-repeat: no-repeat;
+    background-repeat: no-repeat);
     background-position: 99% 0.5px;
-    position: relative;
-    top: -6px;
-    left: 223px;
-    z-index: 2;
+    position:relative;
+    top:-6px;
+    left:223px;
+    z-index:2;
     display: inline-block;
 
 }
@@ -334,30 +327,10 @@
 .sndnav_list {
     width: 744px;
     height: 34px;
-    padding-left: 180px;
-    /*background: #fff;*/
+    padding-left:180px;
+    background: #fff;
 
 }
-
-.sndnav_item {
-    float: left;
-    text-align:center;
-}
-
-.sndnav_link{
-    display: inline-block;
-    height:34px;
-    line-height: 34px;
-
-}
-
-.sndnav_link>em{
-    padding:0 13px;
-    margin:0 17px;
-    display: inline-block;
-    height:20px;
-    line-height:21px;
-    font-style: normal;
-    color: #fff;
-    font-size:12px;
+.sndnav_item{
+    float:left;
 }
