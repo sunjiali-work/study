@@ -58,7 +58,7 @@ footer > iframe {
 .songs_hot {
     width: 689px;
     height: 523px;
-    border: 1px solid #f00;
+
 }
 
 .songs_new {
@@ -76,7 +76,8 @@ footer > iframe {
 .hot_title {
     width: 100%;
     height: 35px;
-    border-bottom:2px solid #C10D0C;
+    border-bottom: 2px solid #C10D0C;
+    padding-right: 10px;
 
 }
 
@@ -84,19 +85,74 @@ footer > iframe {
     display: inline-block;
     width: 34px;
     height: 34px;
-    float:left;
+    float: left;
     background-image: url(../images/bg.png);
     background-repeat: no-repeat;
     background-position: -5% 56%;
 }
 
-.hot_title_head{
+.hot_title_head {
     float: left;
-    width:80px;
-    height:28px;
+    width: 80px;
+    height: 28px;
+    margin: 3px 0;
     font-size: 20px;
-    color:#333;
-    line-height:28px;
+    color: #333;
+    line-height: 28px;
+}
+
+
+.hot_songs_type {
+    float: left;
+    margin-left: 20px;
+    margin-top: 7px;
+
+}
+
+.hot_songs_type > li {
+    float: left;
+}
+
+.hot_songs_type > li + li:before {
+    content: '|';
+    display: inline-block;
+    margin: 0 7px;
+    color: #666;
+}
+
+.hot_type_link {
+    font-size: 12px;
+    line-height: 20px;
+    color: #666;
+}
+
+
+.hot_title > span {
+    float: right;
+    margin: 7px 0px;
+
+
+}
+
+.hot_songs_more {
+    width: 24px;
+    height: 13.33px;
+    color: #666;
+    font-size: 12px;
+
+}
+
+.hot_more_img {
+    display: inline-block;
+    height: 12px;
+    width: 12px;
+
+}
+
+.hot_title:after {
+    content: "";
+    display: block;
+    clear: both;
 }
 
 .singers {
@@ -105,4 +161,90 @@ footer > iframe {
 
 }
 
+.hot_song_list {
+    width: 100%;
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
 
+}
+
+.hr_radio_img_area {
+    position: relative;
+
+}
+
+.hr_img {
+    width: 140px;
+    height: 140px;
+}
+
+.hr_img_link {
+    display: inline-block;
+    width: 140px;
+    height: 140px;
+    background: url(../images/coverall.png) no-repeat;
+    background-position: 0px 0px;
+}
+
+/*底部的图片*/
+.hr_img_bott {
+    width: 140px;
+    height: 27px;
+    position: absolute;
+    top: 113px;
+    background: url(../images/coverall.png) no-repeat;
+    background-position: -2px -537px;
+
+}
+
+.hr_img_bott > i {
+    display: inline-block;
+    width: 14px;
+    height: 11px;
+    margin: 8px 5px 8px 10px;
+    background: url(../images/iconall.png) no-repeat;
+    background-position: 0px -24px;
+}
+
+.hr_img_bott > span {
+    display: inline-block;
+
+    height: 17px;
+    color: #ccc;
+    position: absolute;
+    top: 5px;
+    font-size: 12px;
+}
+
+.hr_bott_link {
+    display: inline-block;
+    width: 16px;
+    height: 17px;
+    position: absolute;
+    top: 5px;
+    right: 10px;
+
+    background: url(../images/iconall.png) no-repeat;
+    background-position: 0px 0px;
+}
+
+.hr_bott_link_active:hover {
+    background: url(../images/iconall.png) no-repeat;
+    background-position: 0px -60px;
+}
+
+.hot_radio_desc {
+    width: 140px;
+}
+
+.hr_desc_link {
+
+    color: #000;
+    font-size: 14px;
+}
+
+.hr_desc_link:hover {
+    text-decoration: underline;
+}
