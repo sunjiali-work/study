@@ -1,7 +1,8 @@
-footer {
+.f_container {
     width: 100%;
     border-top: 1px solid #d3d3d3;
     background: #f2f2f2;
+    border-top: 1px solid #d3d3d3;
 }
 
 .foot_area {
@@ -19,13 +20,6 @@ footer {
     height: 87px;
     padding: auto 0;
 
-
-}
-
-.foot_sign {
-    width: 330px;
-    height: 70px;
-    background: #f00;
 }
 
 .foot_link_item {
@@ -48,13 +42,12 @@ footer {
 
 }
 
-.foot_right{
+.foot_right {
     font-size: 12px;
     color: #666;
 }
 
-
-.foot_desc>ul,.foot_desc>p {
+.foot_desc > ul, .foot_desc > p {
 
     margin: 0.5em 0;
 
@@ -62,8 +55,62 @@ footer {
 
 .foot_right_link {
     color: #666;
+
 }
 
 .foot_right_link:hover {
     text-decoration: underline;
+}
+
+.foot_sign {
+    width: 330px;
+    height: 70px;
+
+    display: flex;
+    justify-content: space-between;
+}
+
+.foot_sign_item {
+
+    width: 60px;
+    height: 70px;
+    text-align: center;
+}
+
+.foot_sign_link {
+    display: inline-block;
+    width: 50px;
+    height: 45px;
+    background-image: url(../images/foot_enter_new.png);
+    background-repeat: no-repeat;
+    background-size: 103px 443px;
+}
+
+.foot_sign > li:nth-child(1) > .foot_sign_link {
+
+    background-position: -58px -100px;
+
+}
+
+.foot_sign > li:nth-child(2) > .foot_sign_link {
+
+    background-position: 5px 0px;
+
+}
+
+.foot_sign > li:nth-child(3) > .foot_sign_link {
+
+    background-position: -58px -50px;
+
+}
+
+.foot_sign > li:nth-child(4) > .foot_sign_link {
+
+    background-position: 5px -100px;
+
+}
+
+.foot_sign_link + p {
+    color: #666;
+    font-size: 12px;
 }

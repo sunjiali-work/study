@@ -1,4 +1,4 @@
-.h_container > nav {
+.h_container  {
     width: 100%;
     background-color: #333333;
 
@@ -15,7 +15,7 @@
 
 }
 
-.h_container > nav, .mynav-tabs > li, .mynav-tabs > li > a {
+.h_container, .mynav-tabs > li, .mynav-tabs > li > a {
     height: 70px;
     background: #242424;
 
@@ -332,7 +332,7 @@
 }
 
 .sndnav_list {
-    width: 744px;
+    width: 758px;
     height: 34px;
     padding-left: 180px;
     /*background: #fff;*/
