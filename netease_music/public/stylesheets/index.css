@@ -67,6 +67,12 @@ footer > iframe {
     border: 1px solid #f00;
 }
 
+/*防止外边距溢出*/
+.songs_new:after {
+    content: "";
+    display: table;
+}
+
 .songs_toplist {
     width: 689px;
     height: 527px;
@@ -101,7 +107,6 @@ footer > iframe {
     line-height: 28px;
 }
 
-
 .hot_songs_type {
     float: left;
     margin-left: 20px;
@@ -126,11 +131,9 @@ footer > iframe {
     color: #666;
 }
 
-
 .hot_title > span {
     float: right;
     margin: 7px 0px;
-
 
 }
 
@@ -247,4 +250,14 @@ footer > iframe {
 
 .hr_desc_link:hover {
     text-decoration: underline;
+}
+
+/*新碟上架*/
+.songs_new_list {
+    width: 100%;
+    height: 186px;
+    background: #f5f5f5;
+    border: 1px solid #fff;
+    box-sizing: content-box;
+    margin: 20px 0 37px 0;
 }
