@@ -69,6 +69,7 @@ footer > iframe {
     width: 689px;
     height: 243px;
     /*border: 1px solid #f00;*/
+    margin-top: 30px;
     margin-bottom: 37px;
 }
 
@@ -98,9 +99,10 @@ footer > iframe {
     width: 34px;
     height: 34px;
     float: left;
-    background-image: url(../images/bg.png);
+    background-image: url(../images/index.png);
     background-repeat: no-repeat;
-    background-position: -5% 56%;
+    /*background-position: -5% 56%;*/
+    background-position: 59% 36%;
 }
 
 .hot_title_head {
@@ -155,6 +157,8 @@ footer > iframe {
     display: inline-block;
     height: 12px;
     width: 12px;
+    background: url(../images/index.png) no-repeat;
+    background-position: 0px -240px;
 
 }
 
@@ -164,11 +168,6 @@ footer > iframe {
     clear: both;
 }
 
-.singers {
-    width: 250px;
-    height: 919.77px;
-
-}
 
 .hot_song_list {
     width: 100%;
@@ -179,6 +178,9 @@ footer > iframe {
 
 }
 
+.hot_radio_item{
+    margin-bottom:32px;
+}
 .hr_radio_img_area {
     position: relative;
 
@@ -187,6 +189,7 @@ footer > iframe {
 .hr_img {
     width: 140px;
     height: 140px;
+
 }
 
 .hr_img_link {
@@ -195,6 +198,10 @@ footer > iframe {
     height: 140px;
     background: url(../images/coverall.png) no-repeat;
     background-position: 0px 0px;
+    position:absolute;
+    top:0px;
+    left:0px;
+
 }
 
 /*底部的图片*/
@@ -246,12 +253,15 @@ footer > iframe {
 
 .hot_radio_desc {
     width: 140px;
+    margin:8px 0px 3px;
 }
 
 .hr_desc_link {
-
+display:block;
+    width:140px;
     color: #000;
     font-size: 14px;
+
 }
 
 .hr_desc_link:hover {
@@ -288,9 +298,8 @@ footer > iframe {
 .toplist_con > div:nth-child(3) {
     width: 228px;
     height: 472px;
-    background: #00b3ee;
-}
 
+}
 
 /*榜单头部*/
 .toplist_top {
@@ -311,8 +320,7 @@ footer > iframe {
     float: left;
     width: 80px;
     height: 80px;
-    background: url(../images/18696095720518497.jpg) no-repeat;
-    background-size: 100% 100%;
+
     /*background-position: 0% 0%;*/
 
 }
@@ -324,7 +332,6 @@ footer > iframe {
     margin: 6px 0px 0px 10px;
 }
 
-
 .top_increase_right a h1 {
     display: inline-block;
     height: 18.6px;
@@ -335,7 +342,6 @@ footer > iframe {
     font-weight: bold;
     font-family: Arial, Helvetica, sans-serif;
 }
-
 
 .top_increase_right > a > h1:hover {
     text-decoration: underline;
@@ -353,7 +359,6 @@ footer > iframe {
     background-image: url(../images/index.png);
     background-repeat: no-repeat;
 }
-
 
 .top_increase_right_btn.btn1 {
 
@@ -374,12 +379,45 @@ footer > iframe {
 
 .top_songs_list {
     list-style: none;
+    margin: 0;
 }
 
-.top_songs_list > li {
+.top_songs_list > li, .toplist_more {
     width: 100%;
     height: 32px;
+
 }
+
+.toplist_more {
+    padding-right: 32px;
+    padding-top: 9px;
+    text-align: right;
+    /*line-height:32px;*/
+}
+
+/*查看全部*/
+.toplist_more > a {
+    display: inline-block;
+    width: 55px;
+    height: 14px;
+    color: #000;
+    font-size: 12px;
+    line-height: 14px;
+
+}
+
+.toplist_more > a:hover {
+    color: #000;
+
+}
+
+/*
+.toplist_more:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+*/
 
 .top_songs_list > .top_item > span {
     display: inline-block;
@@ -396,6 +434,9 @@ footer > iframe {
     color: #c10d0c;
 }
 
+.top_item > span {
+    float: left;
+}
 
 .top_item > span + a {
     display: inline-block;
@@ -404,25 +445,28 @@ footer > iframe {
     color: #000;
     font-size: 12px;
     line-height: 32px;
-    width:98px;
-    white-space:nowrap;
-    text-overflow:ellipsis;
+    width: 170px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
     overflow: hidden;
+    float: left;
 }
 
-.top_item > span + a:hover{
-    width:98px;
-    white-space:nowrap;
-    text-overflow:ellipsis;
+.top_item > span + a:hover {
+    width: 96px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
     overflow: hidden;
 
 }
+
 .top_item_action {
     display: inline-block;
-    background: blue;
     width: 82px;
     height: 19px;
     margin-top: 6px;
+    float: left;
+    display: none;
 
 }
 
@@ -430,4 +474,115 @@ footer > iframe {
     width: 17px;
     height: 17px;
     margin-right: 10px;
+    float: left;
+
+}
+
+.top_item_action_btn.btn1 {
+    background: url(../images/index.png) no-repeat;
+    background-position: -267px -268px;
+}
+
+.top_item_action_btn.btn2 {
+    background: url(../images/icon.png) no-repeat;
+    background-position: 1px -699px;
+
+}
+
+.top_item_action_btn.btn3 {
+    background: url(../images/index.png) no-repeat;
+    background-position: -297px -269px;
+}
+
+.top_item_action_btn.btn1:hover {
+    background: url(../images/index.png) no-repeat;
+    background-position: -267px -288px;
+}
+
+.top_item_action_btn.btn2:hover {
+    background: url(../images/icon.png) no-repeat;
+    background-position: -21px -699px;
+
+}
+
+.top_item_action_btn.btn3:hover {
+    background: url(../images/index.png) no-repeat;
+    background-position: -297px -289px;
+}
+/*飙歌榜*/
+.toplist_con>div:nth-child(1)>.toplist_top>.top_increase_left{
+    background: url(../images/18696095720518497.jpg) no-repeat;
+    background-size: 100% 100%;
+}
+/*新歌榜*/
+/*18713687906568048.jpg*/
+.toplist_con>div:nth-child(2)>.toplist_top>.top_increase_left{
+    background: url(../images/18713687906568048.jpg) no-repeat;
+    background-size: 100% 100%;
+}
+
+/*原创歌曲榜*/
+.toplist_con>div:nth-child(3)>.toplist_top>.top_increase_left{
+    background: url(../images/18740076185638788.jpg) no-repeat;
+    background-size: 100% 100%;
+}
+
+.adv_side {
+    width: 250px;
+    height: 919.77px;
+
+
+}
+
+/*登录面板*/
+.side_login{
+    width:250px;
+    height:126px;
+    background: url(../images/index.png) no-repeat;
+    background-position: 1px 0px;
+
+}
+
+.side_login_desc{
+    width:205px;
+    height:74.2px;
+    margin:0 auto;
+    padding:16px 0;
+    font-size:13.33px;
+    color:#666;
+
+}
+
+.side_login_btn{
+    display:inline-block;
+    width:100px;
+    height:30.99px;
+    margin:0 75px;
+    background: url(../images/index.png) no-repeat;
+    background-position: 0px -196px;
+    color:#fff;
+    font-size:13.33px;
+    text-align:center;
+    line-height:30.99px;
+}
+.side_login_btn:hover{
+    background: url(../images/index.png) no-repeat;
+    background-position: -111px -196px;
+    color:#fff;
+    text-decoration: none;
+}
+
+
+.side_songs{
+    width: 250px;
+    height:455.22px;
+    margin-top:15px;
+    background:#f00;
+}
+
+.side_channel{
+    width:250px;
+    height:293.98px;
+    margin-top:15px;
+    background:blue;
 }
