@@ -16,3 +16,8 @@ a{
     text-decoration: none;
 }
 
+a:hover{
+    color:#000;
+    cursor:pointer;
+    /*text-decoration: none;*/
+}
