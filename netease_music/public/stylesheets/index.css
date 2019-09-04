@@ -1,17 +1,3 @@
-nav {
-    height: 104px;
-}
-
-nav > iframe {
-    width: 100%;
-    /*height: 104px;*/
-    height: 500px
-}
-
-footer > iframe {
-    width: 100%;
-    height: 91px;
-}
 
 .i_container {
     background-color: #f5f5f5;
@@ -23,7 +9,7 @@ footer > iframe {
 
 .content_area {
     width: 982px;
-    height: 1425px;
+    min-height: 1425px;
     margin: 0 auto;
     border: 1px solid #d3d3d3;
     border-width: 0 1px;
@@ -140,6 +126,11 @@ footer > iframe {
     color: #666;
 }
 
+.hot_type_link:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
 .hot_title > span {
     float: right;
     margin: 7px 0px;
@@ -168,7 +159,6 @@ footer > iframe {
     display: block;
     clear: both;
 }
-
 
 .hot_song_list {
     width: 100%;
@@ -535,7 +525,6 @@ footer > iframe {
     width: 250px;
     height: 919.77px;
 
-
 }
 
 /*登录面板*/
@@ -577,7 +566,6 @@ footer > iframe {
     text-decoration: none;
 }
 
-
 .side_songs {
     width: 250px;
     height: 455.22px;
@@ -593,14 +581,12 @@ footer > iframe {
     /*background: blue;*/
 }
 
-
 .side_songs_title {
     width: 210px;
     height: 24px;
     margin: 0 auto;
     border-bottom: 1px solid #ccc;
 }
-
 
 .side_songs_title:after {
     content: "";
@@ -623,8 +609,8 @@ footer > iframe {
 
 .side_songs_head_link:hover {
     color: #666;
+    text-decoration: underline;
 }
-
 
 /*入驻歌手列表*/
 .singers_list {
@@ -634,7 +620,6 @@ footer > iframe {
     padding: 0px 10px;
     margin: 6px auto 14px;
 }
-
 
 .singer_item {
     /*width:62px;*/
@@ -653,7 +638,6 @@ footer > iframe {
     height: 62px;
     float: left;
 
-
 }
 
 .singer_info {
@@ -671,7 +655,6 @@ footer > iframe {
     cursor: pointer;
 }
 
-
 .singer_info > h4 {
     font-size: 14px;
     font-weight: bold;
@@ -688,7 +671,6 @@ footer > iframe {
     color: #666;
 }
 
-
 .singer_apply_btn {
     width: 210px;
     height: 31px;
@@ -703,22 +685,109 @@ footer > iframe {
     overflow: hidden;
     font-size: 14px;
     font-weight: bold;
-    color:#333;
-    line-height:31px;
+    color: #333;
+    line-height: 31px;
 
     /*border:1px solid red;*/
 }
 
-.singer_apply_btn:hover{
+.singer_apply_btn:hover {
     text-decoration: none;
 }
 
-.singer_apply_btn>i{
-    display:inline-block;
+.singer_apply_btn > i {
+    display: inline-block;
     width: 200px;
     height: 31px;
     background: url(../images/button2.png) no-repeat;
     background-position: 0px -223px;
-    font-style:normal;
+    font-style: normal;
     /*border:1px solid blue;*/
+}
+
+.side_channel_list {
+    margin: 20px 20px 0px 20px;
+}
+
+.side_channel_list > li {
+    width: 210px;
+    height: 50px;
+    /*background: red;*/
+
+}
+
+.channel_link {
+    width: 40px;
+    height: 40px;
+    float: left;
+    margin-right: 10px;
+}
+
+.channel_link > img {
+    width: 40px;
+    height: 40px;
+}
+
+.channel_item_info {
+    float: left;
+
+    width: 160px;
+    height: 40.99px;
+}
+
+.channel_sm_link {
+    display: inline-block;
+    max-width: 148px;
+    height: 21px;
+    margin-right: 1px;
+    font-size: 12px;
+    vertical-align: middle;
+    color:#000;
+}
+
+.channel_sm_link:hover{
+    text-decoration: underline;
+}
+.channel_v {
+    display: inline-block;
+    width: 11px;
+    height: 13px;
+
+    background: url(../images/icon.png) no-repeat;
+
+}
+
+.channel_sm_desc {
+    width: 160px;
+    height: 21px;
+    color: #666;
+    font-size: 12px;
+}
+
+
+/*超出固定宽，就不换行，以...代替*/
+.channel_sm_desc,.channel_sm_link{
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+
+}
+
+/*回到顶部按钮*/
+.comback_top{
+    display:block;
+    width:49px;
+    height:44px;
+    background:url(../images/sprite.png);
+    background-position:-264px -47px;
+    position:fixed;
+    top:550px;
+
+    left:1090px;
+
+}
+
+.comback_top:hover{
+
+    background-position:-324px -47px;
 }

@@ -82,7 +82,7 @@
     height: 19px;
     position: relative;
     top: -4px;
-    left: -14px;
+    left: -21px;
     z-index: 2;
     background-image: url(../images/topbar.png);
     background-repeat: no-repeat;
@@ -135,6 +135,11 @@
     line-height: 32px;
 }
 
+.nav_btn:hover{
+    color:#fff;
+    border: 1px solid #fff;
+}
+
 .nav_person {
     margin-left: 20px;
     position: relative;
@@ -159,6 +164,8 @@
 
 /*鼠标移入时*/
 .nav_person_login:hover {
+    color:#787878;
+    text-decoration: underline;
 
 }
 
