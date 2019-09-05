@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>通过购物车的案例，分析DOM元素的事件函数内部的this指向，以及使用this的意义</title>
+    <style>
+        table {
+            width: 600px;
+            text-align: center;
+            border-collapse: collapse;
+        }
+
+        td, th {
+            border: 1px solid black
+        }
+
+        td[colspan="3"] {
+            text-align: right;
+        }
+    </style>
+</head>
+<body>
+<table id="data">
+    <thead>
+    <tr>
+        <th>商品名称</th>
+        <th>单价</th>
+        <th>数量</th>
+        <th>小计</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>iPhone6</td>
+        <td>¥4488.00</td>
+        <td>
+            <button>-</button>
+            <span>1</span>
+            <button>+</button>
+        </td>
+        <td>¥4488.00</td>
+    </tr>
+    <tr>
+        <td>iPhone6 plus</td>
+        <td>¥5288.00</td>
+        <td>
+            <button>-</button>
+            <span>1</span>
+            <button>+</button>
+        </td>
+        <td>¥5288.00</td>
+    </tr>
+    <tr>
+        <td>iPad Air 2</td>
+        <td>¥4288.00</td>
+        <td>
+            <button>-</button>
+            <span>1</span>
+            <button>+</button>
+        </td>
+        <td>¥4288.00</td>
+    </tr>
+    </tbody>
+    <tfoot>
+    <tr>
+        <td colspan="3">Total:</td>
+        <td>¥14064.00</td>
+    </tr>
+    </tfoot>
+</table>
+<script>
+
+    /*
+        点击增加或减少按钮，更改产品的数量
+        1.得到按钮元素对象
+        2.给按钮设置onclick点击属性，并绑定事件处理函数
+        3.用户点击按钮
+        4.触发事件，调用函数
+        5.获取数量所在的元素对象span
+        6.获取span的innerHTML，得到数量
+        7.根据当前的按钮的innerHTML判断是+ 还是-
+        8.对数量进行+1 或=1
+        9.得到新的数量后，再显示到页面上：对span的innerHTML进行重新赋值
+    */
+
+    //得到父元素对象，缩小元素查找范围
+    var table = document.getElementById("data");
+    //更精确的查找，得到table内部所有的按钮
+    var btns = table.getElementsByTagName("button");
+    //循环遍历所有的按钮，给按钮绑定onclick事件
+    for (var btn of btns) {//虽然btns不是数组，但它是类数组对象。凡是带数字下标的，都可以用for of循环遍历
+        /*
+        onclick是元素对象btn的特殊属性 （onclick、onmouseover等on开头的事件属性，是元素对象的特殊属性）
+        * btn.onclick=function(){}
+        * 给btn元素对象的onclick属性赋指
+         类似于以下写法：
+
+        btn={
+            onclick:function(){
+            console.log(this)；
+            }
+       };
+
+       调用就是btn.onclick();
+       这就是为何事件函数内部的this指向btn元素对象
+        *
+        * */
+        btn.onclick = function () {
+            //获取数量所在的元素对象span
+            var countElem = this.parentNode.children[1];//span和btn有共同的父元素
+            //为何这里要用this.，而不是用btn？因为事件被触发时，会执行btn.onclick()，也就是调用这个函数，就会创建一个新的局部作用域。
+            //在这个局部作用域内，一行一行执行这个函数内部的代码时，会碰到btn这个变量，程序发现这个局部作用域内部并未声明和存在这个变量，于是就会顺着作用域链到外部去寻找，也就是全局作用域中去寻找，发现btn是在全局中声明的变量。而在全局作用域中每一次循环遍历btns集合，直到循环结束时，btn这个全局变量已被赋值为按钮集合中的最后一个按钮的地址，指向最后一个按钮。
+            //所以无论点击哪个按钮，触发调用任何一个按钮的onclick事件函数，函数内部用的btn变量都是全局变量，指向按钮集合中的最后一个按钮。导致无论点击哪个按钮，找到的都是最后一个按钮所在的父节点对象td和数量span对象，都是给最后一个按钮所在的那一行的数量加一或减一
+
+            //获取数量，得到的是字符串，数量是整数，所以要将字符串转化为整数类型
+            var count = parseInt(countElem.innerHTML);
+
+            // 判断当前按钮是+ 还是-，是加，数量就加一，是－，数量就减一
+            if (this.innerHTML == "+") {
+                count++;
+            }
+
+            if (this.innerHTML == "-") {
+                count--;
+            }
+
+            // 然后将新的数据显示到页面中，赋值给span元素的innerHTML
+            countElem.innerHTML = count;
+        }
+
+    }
+
+</script>
+</body>
+</html>
