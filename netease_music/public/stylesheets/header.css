@@ -40,6 +40,7 @@
 .mynav-tabs > li {
     float: left;
     margin-bottom: 0;
+    position:relative;
 }
 
 .mynav-tabs > li > a {
@@ -72,7 +73,7 @@
     z-index: 2;
     position: relative;
     top: -14%;
-    left: 3%;
+    left: -3%;
 }
 
 /*hot*/
@@ -330,9 +331,9 @@
     background-image: url(../images/topbar.png);
     background-repeat: no-repeat;
     background-position: 99% 0.5px;
-    position: relative;
-    top: -21px;
-    left: 47px;
+    position: absolute;
+    top: 65px;
+    left: 42.5%;
     z-index: 2;
     display: inline-block;
 
