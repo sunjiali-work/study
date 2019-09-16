@@ -710,25 +710,33 @@
 
     for (var i = 0; i < ol_list.length; i++) {//循环遍历同名的ol有序列表
         var items = ol_list[i].children;//获得其中的一个ol列表下的所有子节点li的集合
-        for (var j = 0; j < items.length - 1; j++) {//循环遍历每个i
+        for (var j = 0; j < items.length - 1; j++) {//循环遍历每个li
             //          获取按钮容器
 
 
             items[j].onmouseover = function () {
-                //   console.log(btn_container);
+                console.log(this.innerHTML);
 //获取当前对象li的子元素，就是class为top_item_action的元素对象
-                var btn_container=this.getElementsByClassName("top_item_action")[0];//class为top_item_action的元素对象,就是播放、收藏、添加按钮的容器
+                var btn_container = this.getElementsByClassName("top_item_action")[0];//class为top_item_action的元素对象,就是播放、收藏、添加按钮的容器
                 btn_container.style = "display:block;";
 
                 //li有鼠标悬停时，前面的歌名a元素并不会被联动触发hover效果。触发鼠标移到a元素上。需求不仅仅只显示播放收藏图标按钮，对前面文字的a元素也要进行样式重设，否则按钮组会被挤下来
 
-                var song_link=(this.children)[1];
-                songs_link.style=`width: 96px;white-space: nowrap;text-overflow: ellipsis;overflow: hidden;`;
+                var song_link = (this.children)[1];
+                songs_link.style =`width: 96
+                px;
+                white - space
+                :
+                nowrap;
+                text - overflow
+                :
+                ellipsis;
+                overflow: hidden;`;
 
             };
 
             items[j].onmouseleave = function () {
-                var btn_container=this.getElementsByClassName("top_item_action")[0];//class为top_item_action的元素对象,就是播放、收藏、添加按钮的容器
+                var btn_container = this.getElementsByClassName("top_item_action")[0];//class为top_item_action的元素对象,就是播放、收藏、添加按钮的容器
                 btn_container.style = "display:none;";
 
             }
@@ -736,9 +744,6 @@
         }
 
     }
-
-
-
 
 
 </script>
