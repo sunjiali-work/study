@@ -704,41 +704,54 @@
 
 
     var ol_list = document.getElementsByClassName("top_songs_list");//得到三个同名的ol列表数组
-    console.log(ol_list instanceof Array);
+
     //遍历每个ol有序列表
 
 
     for (var i = 0; i < ol_list.length; i++) {//循环遍历同名的ol有序列表
         var items = ol_list[i].children;//获得其中的一个ol列表下的所有子节点li的集合
-        for (var j = 0; j < items.length - 1; j++) {//循环遍历每个i
-            //          获取按钮容器
+        for (var j = 0; j < items.length; j++) {//循环下面的每个li
+            var li = items[j];//获取当前的li
+//利用事件冒泡原理，给li元素绑定事件
+
+            /*
+             当鼠标悬停在li上时,无论悬停在哪个子元素，都会发生以下活动：
+             1.a元素宽度变窄，显示按钮组
+             2.按钮组显示
+             3.但当鼠标悬停在按钮组内部的具体某个图标上时，图标的css效果发生变化，这部分可用css的伪类元素hover来实现
+             */
+
+            li.addEventListener('mouseover', function (e) {
+
+                var actionContainer = this.querySelector(".top_item_action");//获取按钮组容器
+                //带歌名的a元素
+                var a = this.children[1];
+                //鼠标悬停时，a元素的样式发生变化
+                a.className += " hover";
+                //鼠标悬停时，按钮组的容器显示
+                actionContainer.className += " hover";
 
 
-            items[j].onmouseover = function () {
-                //   console.log(btn_container);
-//获取当前对象li的子元素，就是class为top_item_action的元素对象
-                var btn_container=this.getElementsByClassName("top_item_action")[0];//class为top_item_action的元素对象,就是播放、收藏、添加按钮的容器
-                btn_container.style = "display:block;";
+            });
+            li.addEventListener('mouseout', function (e) {
+                var actionContainer = this.querySelector(".top_item_action");//获取按钮组容器
 
-                //li有鼠标悬停时，前面的歌名a元素并不会被联动触发hover效果。触发鼠标移到a元素上。需求不仅仅只显示播放收藏图标按钮，对前面文字的a元素也要进行样式重设，否则按钮组会被挤下来
+                //带歌名的a元素
+                var a = this.children[1];
+                //鼠标移除时，a元素的样式发生变化，失去hover的class属性所对应的css效果
+                a.className = a.className.replace(/\s?(hover)/g, "");
+                console.log(a.className);
+                //鼠标悬停时，按钮组的容器隐藏，失去hover的class属性所对应的css效果，因此要去掉hover 这个class属性
+                actionContainer.className = actionContainer.className.replace(/\s?(hover)/g, "");
 
-                var song_link=(this.children)[1];
-                songs_link.style=`width: 96px;white-space: nowrap;text-overflow: ellipsis;overflow: hidden;`;
 
-            };
+            });
 
-            items[j].onmouseleave = function () {
-                var btn_container=this.getElementsByClassName("top_item_action")[0];//class为top_item_action的元素对象,就是播放、收藏、添加按钮的容器
-                btn_container.style = "display:none;";
-
-            }
 
         }
 
+
     }
-
-
-
 
 
 </script>

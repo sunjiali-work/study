@@ -233,48 +233,185 @@
 }
 
 
-
-table{
+table {
     border-collapse: collapse;
     border-spacing: 0;
 }
 
 /*表格外边框*/
 .songs_list {
-    width:100%;
+    width: 100%;
     border: 1px solid #d9d9d9;
     border-top: 0px;
 }
 
-.songs_list th{
-    background-color:#f7f7f7;
-    border:1px solid #dcdcdc;
+.songs_list th {
+    background-color: #f7f7f7;
+    border: 1px solid #dcdcdc;
 }
 
 
-.songs_list > thead >tr> th:nth-child(1) {
+.songs_list > thead > tr > th:nth-child(1) {
     width: 77.6px;
     height: 38px;
 }
 
-.songs_list > thead > tr>th:nth-child(2) {
+.songs_list > thead > tr > th:nth-child(2) {
     width: 327.2px;
     height: 38px;
 }
 
-.songs_list > thead > tr>th:nth-child(3) {
+.songs_list > thead > tr > th:nth-child(3) {
     width: 90.4px;
     height: 38px;
 }
 
-.songs_list > thead > tr>th:nth-child(4) {
+.songs_list > thead > tr > th:nth-child(4) {
     width: 173.6px;
     height: 38px;
 }
 
-.songs_list > thead >tr> th{
-    padding:8px 10px;
-    color:#666;
-    font-size:12px;
-    text-align:left;
+.songs_list > thead > tr > th {
+    padding: 8px 10px;
+    color: #666;
+    font-size: 12px;
+    text-align: left;
+}
+
+/*表格*/
+.songs_list {
+    width: 100%;
+    height: 50px;
+    border: 1px solid #d9d9d9;
+    table-layout: fixed
+}
+
+/*表头*/
+.songs_list > thead th {
+
+    border: 1px solid #d9d9d9;;
+    border-collapse: collapse;
+    border-spacing: 0px;
+    color: #666;
+    font-size: 12px;
+    font-weight: normal;
+}
+
+.songs_list > thead th:nth-child(1) {
+    width: 78px;
+
+}
+
+
+.songs_list > thead th:nth-child(2) {
+    width: 327px;
+
+}
+
+.songs_list > thead th:nth-child(3) {
+    width: 91px;
+
+}
+
+.songs_list > thead th:nth-child(3) {
+    width: 173px;
+
+
+}
+
+.songs_list > thead > th + th {
+    padding: 8px 10px;
+
+
+}
+
+/*排名前三首歌*/
+.songs_list > tbody > tr > td {
+    height: 29.2px;
+    padding: 6px 10px;
+}
+
+/*排名前三首歌*/
+.songs_list > tbody > .topThree > td {
+    height: 69.2px;
+}
+
+/*奇数行背景色是灰色*/
+.songs_list > tbody > tr:nth-child(2n+1) > td {
+    background-color: #f7f7f7;
+}
+
+
+.songs_list > tbody > tr > td > div {
+    height: 18px;
+}
+
+/*第一列*/
+.songs_list > tbody > tr > td:nth-child(1) > div {
+    width: 56.8px;
+
+}
+
+.songs_list > tbody > tr > td:nth-child(1) > div > .tr-index {
+    float: left;
+    width: 25px;
+    height: 18px;
+    text-align: center;
+    font-size: 12px;
+    color: #999;
+}
+
+.songs_list > tbody > tr > td:nth-child(1) > div > .tr-sign {
+    float: right;
+    width: 16px;
+    height: 18px;
+
+    background: url(../images/icon.png) no-repeat;
+    background-position: -67px -285px;
+}
+
+
+/*第二列*/
+.songs_list > tbody > tr > td:nth-child(2) > div {
+    width: 287.2px;
+
+
+}
+
+.songs_list > tbody > tr > td:nth-child(2) > div > .song_play {
+    float: left;
+    width: 17px;
+    height: 18px;
+    margin-right: 8px;
+    background: url(../images/table.png) no-repeat;
+    background-position: 0px -103px;
+}
+
+.songs_list > tbody > tr > td:nth-child(2) > div > .song_play:hover {
+
+    background-position: 0px -128px;
+}
+
+.songs_list > tbody > tr > td:nth-child(2) > div > .song_play.clicked {
+
+    background-position: -20px -128px;
+}
+
+
+.songs_list > tbody > tr > td:nth-child(2) > div .song_name {
+    display: inline-block;
+    width: 252px;
+    height: 18px;
+    font-size: 12px;
+    line-height: 18px;
+    color: #333;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+
+}
+
+.songs_list > tbody > tr > td:nth-child(2) > div .song_name:hover {
+   text-decoration: underline;
+
 }

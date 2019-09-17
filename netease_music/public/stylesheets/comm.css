@@ -43,3 +43,9 @@ footer > iframe {
     height: 91px;
 }
 
+
+table{
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
