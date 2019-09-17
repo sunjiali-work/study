@@ -444,7 +444,7 @@
     float: left;
 }
 
-.top_item > span + a:hover {
+.top_item > span + a.hover {
     width: 96px;
     white-space: nowrap;
     text-overflow: ellipsis;
@@ -453,12 +453,18 @@
 }
 
 .top_item_action {
-    display: inline-block;
+
     width: 82px;
     height: 19px;
     margin-top: 6px;
     float: left;
     display: none;
+
+}
+
+.top_item_action.hover {
+    display: block;
+
 
 }
 
