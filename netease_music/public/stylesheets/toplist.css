@@ -203,7 +203,6 @@
 
 }
 
-
 .songs_list_title > span:nth-child(1) {
     font-size: 20px;
     color: #333;
@@ -232,7 +231,6 @@
     color: #c20c0c;
 }
 
-
 table {
     border-collapse: collapse;
     border-spacing: 0;
@@ -249,7 +247,6 @@ table {
     background-color: #f7f7f7;
     border: 1px solid #dcdcdc;
 }
-
 
 .songs_list > thead > tr > th:nth-child(1) {
     width: 77.6px;
@@ -302,7 +299,6 @@ table {
 
 }
 
-
 .songs_list > thead th:nth-child(2) {
     width: 327px;
 
@@ -316,12 +312,10 @@ table {
 .songs_list > thead th:nth-child(3) {
     width: 173px;
 
-
 }
 
 .songs_list > thead > th + th {
     padding: 8px 10px;
-
 
 }
 
@@ -340,7 +334,6 @@ table {
 .songs_list > tbody > tr:nth-child(2n+1) > td {
     background-color: #f7f7f7;
 }
-
 
 .songs_list > tbody > tr > td > div {
     height: 18px;
@@ -370,11 +363,9 @@ table {
     background-position: -67px -285px;
 }
 
-
 /*第二列*/
 .songs_list > tbody > tr > td:nth-child(2) > div {
     width: 287.2px;
-
 
 }
 
@@ -397,7 +388,6 @@ table {
     background-position: -20px -128px;
 }
 
-
 .songs_list > tbody > tr > td:nth-child(2) > div .song_name {
     display: inline-block;
     width: 252px;
@@ -412,6 +402,108 @@ table {
 }
 
 .songs_list > tbody > tr > td:nth-child(2) > div .song_name:hover {
-   text-decoration: underline;
+    text-decoration: underline;
 
+}
+
+/*第三列*/
+
+.songs_list > tbody > tr > td:nth-child(3) > .play_time {
+    font-size: 12px;
+    color: #666;
+
+}
+
+.songs_list > tbody > tr > td:nth-child(3) > .play_action {
+    width: 73px;
+    box-sizing: border-box;
+   display:none;
+
+}
+
+.songs_list > tbody > tr > td:nth-child(3) > .play_action.hover {
+
+    display:block;
+
+}
+
+.songs_list > tbody > tr > td:nth-child(3) > .play_action > a {
+    display: inline-block;
+    height: 16px;
+    margin-top: 2px;
+    box-sizing: border-box;
+    float: left;
+
+}
+
+.songs_list > tbody > tr > td:nth-child(3) > .play_action > a:first-child {
+    width: 13px;
+
+}
+
+.songs_list > tbody > tr > td:nth-child(3) > .play_action > a:not(:first-child) {
+    width: 18px;
+    margin-left: 2px;
+
+}
+
+.songs_list > tbody > tr > td:nth-child(3) > .play_action > .btn1 {
+    background: url(../images/icon.png) no-repeat;
+    background-position: 0px -700px;
+}
+
+.songs_list > tbody > tr > td:nth-child(3) > .play_action > .btn1:hover {
+    background: url(../images/icon.png) no-repeat;
+    background-position: -22px -700px;
+}
+
+.songs_list > tbody > tr > td:nth-child(3) > .play_action > .btn2 {
+    background: url(../images/icon.png) no-repeat;
+    background-position: -44px -87px;
+}
+
+.songs_list > tbody > tr > td:nth-child(3) > .play_action > .btn2:hover {
+    background: url(../images/icon.png) no-repeat;
+    background-position: -44px -110px;
+}
+
+.songs_list > tbody > tr > td:nth-child(3) > .play_action > .btn3 {
+    background: url(../images/table.png) no-repeat;
+    background-position: -1px -195px;
+}
+
+.songs_list > tbody > tr > td:nth-child(3) > .play_action > .btn3:hover {
+    background: url(../images/table.png) no-repeat;
+    background-position: -21px -195px;
+}
+
+.songs_list > tbody > tr > td:nth-child(3) > .play_action > .btn4 {
+    background: url(../images/table.png) no-repeat;
+    background-position: -82px -174px;
+}
+
+.songs_list > tbody > tr > td:nth-child(3) > .play_action > .btn4:hover {
+    background: url(../images/table.png) no-repeat;
+    background-position: -105px -174px;
+}
+
+
+/*第四列*/
+.songs_list > tbody > tr > td:nth-child(4) > div {
+    width: 153px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.songs_list > tbody > tr > td:nth-child(4) > div .song_link {
+    display: inline-block;
+    height: 18px;
+
+    font-size: 12px;
+    color: #000;
+}
+
+.songs_list > tbody > tr > td:nth-child(4) > div .song_link:hover {
+    text-decoration: underline;
 }
