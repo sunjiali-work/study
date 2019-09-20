@@ -739,10 +739,10 @@
                 //带歌名的a元素
                 var a = this.children[1];
                 //鼠标移除时，a元素的样式发生变化，失去hover的class属性所对应的css效果
-                a.className = a.className.replace(/\s?(hover)/g, "");
+                a.className = a.className.replace(/\s+(hover)/g, "");
                 console.log(a.className);
                 //鼠标悬停时，按钮组的容器隐藏，失去hover的class属性所对应的css效果，因此要去掉hover 这个class属性
-                actionContainer.className = actionContainer.className.replace(/\s?(hover)/g, "");
+                actionContainer.className = actionContainer.className.replace(/\s+(hover)/g, "");
 
 
             });
