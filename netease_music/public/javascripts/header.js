@@ -51,7 +51,7 @@ $(function () {
 //手风琴导航，是鼠标悬停和移除事件时，才会出现或隐藏下拉菜单。需要基于css来操作。因此要等页面完全加载完成后，才能绑定事件
 $(window).load(function () {
 
-    $(".nav_person_title").hover(function () {
+    $(".nav_person_title").mouseover(function () {
         $(".nav_person_list").css("display", "block");
     });
 

@@ -8,6 +8,15 @@ var requests = {
                 callback(result);
             }
         });
+    },
+    getFooter: function (callBack) {
+        $.ajax({
+            url: baseUrl + "/footer.html",
+            method: 'get',
+            success: function (result) {
+                callBack(result);
+            }
+        });
     }
 }
 
