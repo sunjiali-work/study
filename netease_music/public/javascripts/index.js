@@ -1,10 +1,41 @@
 window.addEventListener("load", function () {
+
+    /*榜单的歌曲列表的每一首歌- 按钮组-动态显示或隐藏*/
+    showSongListBtn();
+
+    /*
+     回到顶部
+     当页面发生滚动，滚动到一定距离时，会显示“回到顶部”按钮，小于指定距离，就隐藏按钮
+     1.先给“回到顶部”按钮设置隐藏
+     2.给window发生滚动，给window绑定onscroll事件。
+     3.获取当前页面的滚动距离
+     4.判断滚动距离是否到指定距离
+     5.查找按钮元素对象
+     6.如果滚动到指定距离，就显示按钮
+     7.如果没滚动到指定距离，就隐藏按钮*/
+    window.addEventListener('scroll', backBtnToggle);
+
+    /*  回到页面顶部（点击“回到顶部按钮”，页面就回到了顶部。）
+     1.获取按钮对象
+     2.点击按钮，给按钮绑定click事件
+     3.获取页面已滚动了多少距离
+     4.滚回到顶部，给window对象的scrollBy函数在垂直方向设置要向上滚回顶部的距离（负数）*/
+    var btn = document.getElementsByClassName("comback_top")[0];
+    btn.addEventListener('onclick', backTop);
+
+});
+
+
+/*当鼠标划过榜单的歌曲列表时，
+ 显示/隐藏播放、收藏的按钮组*/
+
+function showSongListBtn() {
     /*  给榜单的每一行绑定hover和mouseleave事件
-    1.得到ol标签
-    2.获得ol所有的子节点
-    3.循环遍历子节点
-    4.给子节点绑定两个事件
-    5.给事件设置相应的处理函数*/
+     1.得到ol标签
+     2.获得ol所有的子节点
+     3.循环遍历子节点
+     4.给子节点绑定两个事件
+     5.给事件设置相应的处理函数*/
 
 
     var ol_list = document.getElementsByClassName("top_songs_list");//得到三个同名的ol列表数组
@@ -55,4 +86,36 @@ window.addEventListener("load", function () {
 
 
     }
-});
+
+}
+
+
+//获取页面当前已滚动的距离，并滚回顶部
+/*
+ 滚回页面顶部
+ 3.获取页面已滚动了多少距离
+ 4.滚回到顶部，给window对象的scrollBy函数在垂直方向设置要向上滚回顶部的距离（负数）*/
+function backTop() {
+    //获取已滚动的距离
+    var distance = document.body.scrollTop || document.documentElement.scrollTop;
+
+    window.scrollBy(0, -distance);
+
+}
+
+//显示或隐藏回到顶部的按钮
+function backBtnToggle() {
+    //获取当前滚动的距离
+    var distance = document.body.scrollTop || document.documentElement.scrollTop;
+
+    //获取回到顶部按钮
+    var btn = document.getElementsByClassName("comback_top")[0];
+    if (distance > 200) {
+
+        btn.style.display = "block";
+
+    } else {
+        btn.style.display = "none";
+    }
+
+}
