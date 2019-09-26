@@ -1,9 +1,9 @@
 /*
-引入footer.js文件
-1.通过get请求，向服务器请求footer。html静态资源
-2.获取到服务器返回的footer.html后，再查找footer元素对象。往footer的innerHTML中添加页脚内容
-3.再查找head标签，往里添加新元素link，引入footer.css
-*/
+ 引入footer.js文件
+ 1.通过get请求，向服务器请求footer。html静态资源
+ 2.获取到服务器返回的footer.html后，再查找footer元素对象。往footer的innerHTML中添加页脚内容
+ 3.再查找head标签，往里添加新元素link，引入footer.css
+ */
 
 
 $(function () {
@@ -28,3 +28,17 @@ $(function () {
     //获取到服务器的资源后，再执行footer元素的内容插入操作
     requests.getFooter(callBack);
 });
+
+var i = 0;
+var sum = 0;
+do {
+    i++;
+    if (i % 2 === 0) {
+        continue;
+    }
+    if (i % 5 === 0) {
+        break;
+    }
+    sum += i;
+} while (i < 10);
+console.log('sum=' + sum);
