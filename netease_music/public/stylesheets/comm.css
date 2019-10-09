@@ -23,6 +23,7 @@ a{
 
 a:hover{
     color:#000;
+    font-size:12px;
     cursor:pointer;
     /*text-decoration: none;*/
 }
