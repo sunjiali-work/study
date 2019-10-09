@@ -29,16 +29,3 @@ $(function () {
     requests.getFooter(callBack);
 });
 
-var i = 0;
-var sum = 0;
-do {
-    i++;
-    if (i % 2 === 0) {
-        continue;
-    }
-    if (i % 5 === 0) {
-        break;
-    }
-    sum += i;
-} while (i < 10);
-console.log('sum=' + sum);

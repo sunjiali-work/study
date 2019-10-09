@@ -1,0 +1,20 @@
+/*dj电台*/
+.djradio_container {
+    width: 100%;
+}
+
+.dj_content {
+    width: 982px;
+    min-height:700px;
+    margin: 0 auto;
+    padding:40px;
+    border: 1px solid #d3d3d3;
+    border-width:0 1px;
+    background: #fff;
+
+}
+
+.center_con{
+width:0;
+    height:0;
+}
