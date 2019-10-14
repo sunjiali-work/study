@@ -1,0 +1,44 @@
+.my_container{
+    width:100%;
+    background:#f5f5f5;
+}
+.content{
+    width:982px;
+    height:700px;
+    margin:0 auto;
+    border:1px solid #d3dede;
+    background:#fff;
+}
+
+.login_con{
+    width:807px;
+    height:372px;
+    margin:0 86.5px;
+    padding-top:104px;
+    background:url(../images/mymusic.png) no-repeat;
+    background-position:0px 103px;
+
+}
+
+
+.login_con>h1{
+    width:807px;
+    height:100px;
+}
+
+.login_con>.login_btn{
+    width:167px;
+    height:45px;
+    display:block;
+   /*border:1px solid red;*/
+    margin:100px 0px 0px 481px;
+ /*   background: url(../images/mymusic.png) no-repeat;
+    background-position: -483px -202px;*/
+
+}
+
+.login_con>.login_btn:hover{
+    background: url(../images/mymusic.png) no-repeat;
+    background-position: 1px -277px;
+
+}
