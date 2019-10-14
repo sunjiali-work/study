@@ -79,7 +79,7 @@ $(function () {
         $(".sndnav_list>li.active").removeClass("active");
 //给当前所在的菜单li添加active属性
         var toplistBar = document.querySelector(".sndnav_list>li:nth-child(" + num + ")");
-        console.log(toplistBar);
+
         if ((toplistBar.className).indexOf("active") < 0) {
             toplistBar.className += " active";
         }

@@ -23,10 +23,13 @@ window.addEventListener("load", function () {
     var btn = document.getElementsByClassName("comback_top")[0];
     btn.addEventListener('onclick', backTop);
 
+    changeCarouselItem();//播放轮播图
+
 });
-
-
-
+//播放轮播图
+/*window.addEventListener('load', function(){
+    changeCarouselItem();//播放轮播图
+});*/
 
 /*当鼠标划过榜单的歌曲列表时，
  显示/隐藏播放、收藏的按钮组*/
@@ -120,4 +123,79 @@ function backBtnToggle() {
         btn.style.display = "none";
     }
 
+}
+
+/*
+移动到哪站图片
+
+给什么数字，就跳到第几张图片，用变量to来表示要调到第几张图片，to为0时，表示第一张图片
+to为负值时，就往左跳，margin-left就递减
+to为正数时，就向右跳，margin-left就递增
+
+1.获取每张图片的宽度
+2.获取共有多少张图片
+3.判断用户是否指定了跳到第几张图片，如果没指定当前to为underfined，
+设置一个变量x代表当前图片的下标，如果用户没给，x=x+1,默认就跳一张
+4.如果用户指定了参数to，那么就把to赋值给x，更新x的取值，让之前的所在位置变为新位置to
+5.计算margin-left=-x*width+"px";
+6. A.跳到最后一张时，x=count时，就代表最后一张（最后一张和第一张图片是一样的），马上又要从第一张开始轮播回来，所以这时，x要重置为0.同时，从最后倒数第二张渐渐逐渐过渡最后一张,等完全过渡到最后一张了，
+B.要去掉ul的transition的class属性，然后把margin-left改为0，迅速跳到第一张，这个过程期间没有过度，是个迅速的过程
+C.当x=count，最后一张时，是没有小圆点的。因此程序不用再向下执行
+
+7.跳到第一张后，要慢慢调到第2张，所以当x=0时，就要给ul添加transition属性
+8.当ul变化时，下面小圆点的样式也跟着变化，当前x为几，对应的就是第几个小圆点被选中。
+  A.先要清除其他小圆点的active 属性
+  B.再给对应图片的所属小圆点添加active的class属性
+
+*/
+
+function changeCarouselItem() {
+
+    var width = 730;
+    var count = 9;
+    var duration = 500;
+    var x = 0;//x为正在播放的当前图片的下标，默认都是从第一张照片开始播放的，所以x为0
+    var ulImgs = document.getElementById("ul-imgs");
+    var ulIds = document.getElementsByClassName("ul-ids")[0];
+    //获取所有小圆点的集合
+    var pointList = ulIds.getElementsByTagName("li");
+    var lbtn = document.getElementById("leftBtn");
+    var rbtn = document.getElementById("rightBtn");
+    rbtn.onclick = function () {
+        moveTo();
+    }
+
+}
+
+function moveTo(to) {
+    console.log(33333)
+    if (to == undefined) {
+        to = x + 1;
+    }
+
+
+    if (x == 0) {
+        ulImgs.className = "transition";
+    }
+
+    if (x == count) {
+        x = 0;
+        setTimeout(() => {
+            ulImgs.className = "";
+            ulImgs.style.marginLeft = "0px";
+        }, duration);
+        return;
+    }
+    x = to;
+
+    ulImgs.style.marginLeft = `-${x * width}px;`;
+
+
+    // 先清除所有的小圆点样式
+    for (var li of pointList) {
+        li.className = "";
+    }
+
+    //再给当前播放的图片对应的小圆点添加active属性
+    pointList[x].className = "active";
 }

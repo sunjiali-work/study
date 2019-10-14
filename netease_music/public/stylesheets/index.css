@@ -837,7 +837,7 @@
     background-position: 0 -578px;
 }
 
-.ul-imgs > li > a {
+#ul-imgs > li > a {
     display: block;
 }
 
@@ -846,11 +846,11 @@
     position: relative;
 }
 
-.carmap_area > .banner > .ul-imgs.transition {
+.carmap_area > .banner > #ul-imgs.transition {
     transition: all .5s linear;
 }
 
-.banner, .ul-imgs, .ul-imgs > li, .ul-imgs > li > a.ul-imgs > li > a > img {
+.banner, #ul-imgs, #ul-imgs> li, #ul-imgs> li > a#ul-imgs> li > a > img {
 
     width: 730px;
     height: 336px;
