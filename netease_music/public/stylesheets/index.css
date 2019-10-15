@@ -1,10 +1,7 @@
 
 .i_container {
     background-color: #f5f5f5;
-}
 
-.carmap_area {
-    height: 336px;
 }
 
 .content_area {
@@ -265,10 +262,100 @@
     width: 100%;
     height: 186px;
     background: #f5f5f5;
-    /*border: 1px solid #00f;*/
+    border: 1px solid #d3d3d3;
     box-sizing: content-box;
     margin: 20px 0 37px 0;
+    /*padding-left: 16px;*/
 
+}
+
+/*歌碟滚动区域*/
+.album_roller {
+    width: 687px;
+    height: 186px;
+    /*background: red;*/
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+#album_lbtn, #album_rbtn {
+    display: block;
+    width: 17px;
+    height: 17px;
+    /*border:1px solid red;*/
+    background: url(../images/index.png) no-repeat;
+}
+
+/*左按钮*/
+#album_lbtn {
+    background-position: -260px -75px;
+
+}
+
+/*右按钮*/
+#album_rbtn {
+    background-position: -300px -75px;
+}
+
+.album_banner {
+    width: 645px;
+    height: 150px;
+    /*background: yellow;*/
+    overflow: hidden;
+
+}
+
+.album_banner > #banner_imgs {
+    height: 150px;
+    width: 1290px;
+
+
+}
+.album_banner > #banner_imgs:after{
+    display:block;
+    content:"";
+    clear:both;
+}
+
+#banner_imgs>li{
+    height:150px;
+    width:645px;
+    float:left;
+    display:flex;
+    justify-content:space-between;
+}
+.album_s1 {
+    display: block;
+    width: 118px;
+    height: 110px;
+    /*border: 1px solid red;*/
+    background: url(../images/coverall.png) no-repeat;
+    background-position: 0 -570px;
+}
+
+/*每张歌碟的父容器*/
+.album_area {
+    width: 118px;
+    height: 150px;
+    background: url(../images/index.png) no-repeat;
+    background-position: -259px 100px;
+}
+
+/*歌碟文字说明*/
+.album_text{
+    display:block;
+    height:18px;
+    width:106px;
+    color:#000;
+    font-size:12px;
+    margin-top:2px;
+}
+
+.album_text:hover{
+    text-decoration: underline;
 }
 
 .toplist_con {
@@ -405,9 +492,9 @@
 
 /*
 .toplist_more:after {
-    content: "";
-    display: block;
-    clear: both;
+  content: "";
+  display: block;
+  clear: both;
 }
 */
 
@@ -787,7 +874,7 @@
     position: fixed;
     top: 550px;
 
-    left: 1090px;
+    left: 95%;
 
 }
 
@@ -800,8 +887,7 @@
 .carmap_area {
     width: 100%;
     height: 336px;
-    background-color: blue;
-    positive: relative;
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -837,6 +923,12 @@
     background-position: 0 -578px;
 }
 
+.banner > #ul-imgs {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
 #ul-imgs > li > a {
     display: block;
 }
@@ -844,13 +936,14 @@
 /*轮播图的容器*/
 .carmap_area > .banner {
     position: relative;
+    overflow: hidden;
 }
 
 .carmap_area > .banner > #ul-imgs.transition {
     transition: all .5s linear;
 }
 
-.banner, #ul-imgs, #ul-imgs> li, #ul-imgs> li > a#ul-imgs> li > a > img {
+.banner, #ul-imgs, #ul-imgs > li, #ul-imgs > li > a, #ul-imgs > li > a > img {
 
     width: 730px;
     height: 336px;
@@ -859,14 +952,31 @@
 /*下载客户端*/
 .downloadApp {
     width: 256px;
-    height: 354px;
-    background: #000;
+    height: 336px;
+    background: url(../images/download.png) no-repeat;
+    /* background-position:0 0; */
+
+    position: relative;
 }
 
-.downloadApp > a {
+.downloadApp > #downAppBtn {
     display: block;
-    width: 0;
-    height: 0;
+    position: absolute;
+    top: 212px;
+    left: 19px;
+    width: 215px;
+    height: 56px;
+    /* border:1px solid red;  */
+    background: url(../images/download.png) no-repeat;
+    background-position: -18px -212px;
+
+}
+
+.downloadApp > #downAppBtn:hover {
+
+    background: url(../images/download.png) no-repeat;
+    background-position: 1px -340px;
+
 }
 
 /*小圆点*/
