@@ -2,7 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Home from './views/Home.vue'
 import Login from './views/Login.vue'
-
+import Login2 from './views/Login2.vue'
 Vue.use(Router)
 
 export default new Router({
@@ -12,6 +12,11 @@ export default new Router({
       name: 'Login',
       component: Login
     },
+    {
+      path: '/login2',
+      name: 'Login2',
+      component: Login2
+    }
     /*    {
          path: '/',
          name: 'home',
