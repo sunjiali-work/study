@@ -1,0 +1,44 @@
+{
+  "id": "",
+  "name": "",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "256522",
+      "name": "商城",
+      "font_class": "shangcheng",
+      "unicode": "e72b",
+      "unicode_decimal": 59179
+    },
+    {
+      "icon_id": "436381",
+      "name": "个人中心",
+      "font_class": "53",
+      "unicode": "e635",
+      "unicode_decimal": 58933
+    },
+    {
+      "icon_id": "953153",
+      "name": "附近",
+      "font_class": "fujin",
+      "unicode": "e60b",
+      "unicode_decimal": 58891
+    },
+    {
+      "icon_id": "1638357",
+      "name": "首页",
+      "font_class": "shouye",
+      "unicode": "e615",
+      "unicode_decimal": 58901
+    },
+    {
+      "icon_id": "10241508",
+      "name": "ar",
+      "font_class": "ar",
+      "unicode": "e78a",
+      "unicode_decimal": 59274
+    }
+  ]
+}

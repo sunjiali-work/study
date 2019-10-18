@@ -1,49 +1,55 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div class="area">
+    <div class="container" :style="screenSty">
+      <!-- 页面头部 -->
+      <div class="page_title">
+        <span>{{titleName}}</span>
 
-      <!-- 头部标签 -->
-    <mt-navbar class="page-part" :selected.sync="selected">
-      <mt-tab-item id="1">登录</mt-tab-item>
-    </mt-navbar>
-
-    <!-- tab-container -->
-    <mt-tab-container :active.sync="selected">
-      <mt-tab-item id="1">
-        <div class="container">
-          <div class="inputCon">
-            <!-- 手机号 -->
-            <div class="loginContainer">
-              <input type="text" class="loginInput" placeholder="请输入手机号" />
-            </div>
-            <div class="loginContainer">
-              <input type="text" class="loginInput" placeholder="请输入验证码" />
-              <a href="javascript:;">发送验证码</a>
-            </div>
-            <p>
-              <span>登录表示用户同意</span>
-              <a>用户注册协议</a>
-            </p>
-          </div>
-          <div class="btns">
-            <button>登录</button>
-            <button>取消</button>
-          </div>
+        <div>
+          <router-link to>
+            <img :src="require('../assets/index/u23.png')" />
+          </router-link>
+          <router-link to>
+            <img :src="require('../assets/index/u22.png')" />
+          </router-link>
         </div>
-      </mt-tab-item>
-    </mt-tab-container>
+      </div>
+      <!-- 当页面滚动过一定距离，页面头部就显示当前页面名称 -->
+      <!-- 给当前页面绑定滚动事件，判断滚动距离 -->
+      <!-- 如果==某个距离值，就隐藏日期，显示首页名称 -->
+      <!-- 如果<某个距离值，就显示日期，隐藏头部 -->
+      <!-- 当页面滚动的距离未超过指定距离，就显示日期 -->
+      <!-- 主体 -->
+    </div>
   </div>
 </template>
-
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
-
 export default {
-  name: 'home',
-  components: {
-    HelloWorld
+  data() {
+    return {
+      screenSty:{
+        width:screen.height
+      },
+      titleName: "星期一"
+    };
   }
-}
+};
 </script>
+<style scoped>
+
+/* 页面容器 */
+.container {
+  width: 80%;
+  
+}
+.page_title {
+  height: 55px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgb(43, 205, 221);
+}
+</style>
