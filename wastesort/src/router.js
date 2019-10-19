@@ -4,10 +4,16 @@ import Home from './views/Home.vue'
 import Login from './views/Login.vue'
 import Login2 from './views/Login2.vue'
 import Index from './views/Index.vue'
+import Fonticonbtn from './components/home/Fonticonbtn.vue';
 Vue.use(Router)
 
 export default new Router({
   routes: [
+    // {
+    //   path: '/icon',
+    //   name: 'Fonticonbtn',
+    //   component: Fonticonbtn
+    // },
     {
       path: '/home',
       name: 'Home',

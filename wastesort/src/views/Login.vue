@@ -99,7 +99,7 @@ export default {
   height: 400px;
   width: 275px;
   text-align: left;
-  background: url(../img/login/1.png) no-repeat;
+  background: url(../assets/login/1.png) no-repeat;
   background-position: 50% 10%;
 }
 
