@@ -48,14 +48,20 @@
       <ul class="navBtnArea">
         <fonticonbtn v-for="(navbtn,i) of navBtnList" :key="i" :navbtn="navbtn"></fonticonbtn>
       </ul>
-      <!-- 限时兑换 -->
+      <!-- 限时兑换标题 -->
       <div class="change_intime">
-        <p class="change_title">
-          <i></i>
-          <span>限时兑换</span>
-          <span>13：40：33</span>
-        </p>
-        <router-link class="moreLink">更多</router-link>
+        <div class="change_title">
+          <p>
+            <i></i>
+            <span>限时兑换</span>
+          </p>
+          <span>{{this.restTime}}</span>
+        </div>
+        <router-link to class="moreLink">更多</router-link>
+      </div>
+      <!-- 限时兑换商品 -->
+      <div class="time_banner">
+        <ul class="ulpros"></ul>
       </div>
       <!-- 热门讨论 -->
     </div>
@@ -64,6 +70,7 @@
 
 <script>
 import Fonticonbtn from "../components/home/Fonticonbtn.vue";
+import { setInterval, clearInterval } from "timers";
 
 export default {
   data() {
@@ -94,7 +101,8 @@ export default {
           font: "每日签到",
           pageLink: ""
         }
-      ]
+      ],
+      restTime: "01:01:00"
     };
   },
   methods: {
@@ -124,7 +132,41 @@ export default {
        
 
        */
+
+      var timer = setInterval(() => {
+        var [seconds, minute, hour] = [0, 0, 0];
+        var timeArr = this.restTime.split(":");
+        hour = parseInt(timeArr[0]);
+        minute = parseInt(timeArr[1]);
+        seconds = parseInt(timeArr[2]);
+        var total = hour * 60 * 60 + minute * 60 + seconds;
+        if (total == 1) {
+          clearInterval(timer);
+        }
+        total -= 1;
+        hour = parseInt(total / (60 * 60));
+        minute = parseInt((total % (60 * 60)) / 60);
+        seconds = parseInt((total % (60 * 60)) % 60);
+        hour == 0 ? "00" : hour < 10 ? "0" + hour : hour;
+        minute == 0 ? "00" : minute < 10 ? "0" + minute : minute;
+        seconds == 0 ? "00" : seconds;
+        if (hour < 10) {
+          hour = "0" + hour;
+        }
+
+        if (minute < 10) {
+          minute = "0" + minute;
+        }
+
+        if (seconds < 10) {
+          seconds = "0" + seconds;
+        }
+        this.restTime = `${hour}:${minute}:${seconds}`;
+      }, 1);
     }
+  },
+  mounted: function() {
+    this.changeTime();
   },
   components: {
     fonticonbtn: Fonticonbtn
@@ -214,7 +256,7 @@ export default {
   height: 120px;
   margin: 20px auto;
 }
-
+/* 顶部导航按钮 */
 .navBtnArea {
   list-style: none;
   width: 100%;
@@ -225,5 +267,51 @@ export default {
   border-bottom: 8px solid #ecfdfa;
 }
 
-/* 顶部导航按钮 */
+.change_intime {
+  width: 100%;
+  height: 19px;
+  display: flex;
+  justify-content: space-between;
+  margin: 7px 0;
+}
+.change_intime > .change_title {
+  display: flex;
+  justify-content: space-between;
+  width: 40%;
+  height: 16px;
+}
+
+.change_intime > .change_title > p {
+  width: 50%;
+  display: flex;
+  justify-content: space-between;
+}
+.change_intime > .change_title > p > i {
+  display: block;
+  height: 12px;
+  width: 0;
+  border: 2px solid rgba(62, 210, 228, 1);
+}
+
+.change_intime > .change_title > p > span {
+  display: block;
+  height: 19px;
+  line-height: 16px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.change_intime > .change_title > span:last-child {
+  display: block;
+  height: 16px;
+  line-height: 16px;
+  font-size: 12px;
+  color: #333;
+}
+
+.change_intime > .moreLink {
+  font-size: 12px;
+  line-height: 16px;
+  color: #ccc;
+}
 </style>
