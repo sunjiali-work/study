@@ -61,16 +61,41 @@
       </div>
       <!-- 限时兑换商品 -->
       <div class="time_banner">
-        <ul class="ulpros"></ul>
+        <ul class="ulpros">
+          <product v-for="(product,i) of productList" :key="i" :goods="product"></product>
+          <router-link to class="moreproduct">
+            <p>查</p>
+            <p>看</p>
+            <p>更</p>
+            <p>多</p>
+          </router-link>
+        </ul>
       </div>
       <!-- 热门讨论 -->
+      <div class="change_intime hot_discuss">
+        <div class="change_title">
+          <p>
+            <i class></i>
+            <span>热门讨论</span>
+          </p>
+          
+        </div>
+        <router-link to class="moreLink">更多</router-link>
+      </div>
+
+      <!-- 一条讨论 -->
+      <div class="discuss_list">
+
+        
+      </div>
     </div>
   </div>
 </template>
 
 <script>
 import Fonticonbtn from "../components/home/Fonticonbtn.vue";
-import { setInterval, clearInterval } from "timers";
+import Product from "../components/home/Product.vue";
+// import { setInterval, clearInterval } from "timers";
 
 export default {
   data() {
@@ -80,6 +105,33 @@ export default {
         height: screen.height + "px"
       },
       titleName: "星期一",
+      productList: [
+        {
+          imgUrl: require("../assets/product/1.png"),
+          nowmoney: "125" + "币",
+          oldmoney: "100"
+        },
+        {
+          imgUrl: require("../assets/product/1.png"),
+          nowmoney: "125" + "币",
+          oldmoney: "100"
+        },
+        {
+          imgUrl: require("../assets/product/1.png"),
+          nowmoney: "125" + "币",
+          oldmoney: "100"
+        },
+        {
+          imgUrl: require("../assets/product/1.png"),
+          nowmoney: "125" + "币",
+          oldmoney: "100"
+        },
+        {
+          imgUrl: require("../assets/product/1.png"),
+          nowmoney: "125" + "币",
+          oldmoney: "100"
+        }
+      ], //商品列表
       navBtnList: [
         {
           imgSrc: require("../assets/home/calendar.png"),
@@ -162,14 +214,15 @@ export default {
           seconds = "0" + seconds;
         }
         this.restTime = `${hour}:${minute}:${seconds}`;
-      }, 1);
+      }, 1000);
     }
   },
   mounted: function() {
     this.changeTime();
   },
   components: {
-    fonticonbtn: Fonticonbtn
+    fonticonbtn: Fonticonbtn,
+    product: Product
   }
 };
 </script>
@@ -178,6 +231,7 @@ export default {
 .area {
   background: url(../assets/home/u19.png) no-repeat;
   background-position: 0 -70px;
+  /* position:relative; */
 }
 .homecon {
   width: 90%;
@@ -254,13 +308,13 @@ export default {
 
 .waste_carousel {
   height: 120px;
-  margin: 20px auto;
+  margin: 18px auto;
 }
 /* 顶部导航按钮 */
 .navBtnArea {
   list-style: none;
   width: 100%;
-  height: 58px;
+  height: 68px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -313,5 +367,52 @@ export default {
   font-size: 12px;
   line-height: 16px;
   color: #ccc;
+}
+.time_banner {
+  width: 100%;
+  height: 148px;
+  overflow: hidden;
+}
+/* 商品滚动图 */
+.area .ulpros {
+  list-style: none;
+  margin-left: -15px;
+  height: 140px;
+  width: 900px;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  flex-wrap: nowrap;
+  border-bottom: 8px solid #ecfdfa;
+}
+
+.moreproduct {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 30px;
+  height: 127px;
+}
+
+.moreproduct > p {
+  width: 30px;
+  height: 16px;
+  color: #333;
+  line-height: 16px;
+  text-align: center;
+  font-size: 12px;
+}
+
+/* 热门讨论 */
+.discuss-title {
+  width: 100%;
+  height: 33px;
+}
+
+.hot_discuss > .change_title > p > i {
+  display: block;
+  height: 12px;
+  width: 0;
+  border: 2px solid rgba(255, 94, 129, 1);
 }
 </style>
