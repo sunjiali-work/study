@@ -15,7 +15,7 @@ export default {
     navbtn: Object
   },
   created() {
-    console.log(this.navbtn.imgSrc);
+   
   }
 };
 </script>
