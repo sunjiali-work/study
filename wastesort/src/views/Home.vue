@@ -59,9 +59,10 @@
         </div>
         <router-link to class="moreLink">更多</router-link>
       </div>
+
       <!-- 限时兑换商品 -->
       <div class="time_banner">
-        <ul class="ulpros">
+        <ul class="ulpros" @mouseenter="moveImgs">
           <product v-for="(product,i) of productList" :key="i" :goods="product"></product>
           <router-link to class="moreproduct">
             <p>查</p>
@@ -78,16 +79,12 @@
             <i class></i>
             <span>热门讨论</span>
           </p>
-          
         </div>
         <router-link to class="moreLink">更多</router-link>
       </div>
 
       <!-- 一条讨论 -->
-      <div class="discuss_list">
-
-        
-      </div>
+      <div class="discuss_list"></div>
     </div>
   </div>
 </template>
@@ -154,7 +151,11 @@ export default {
           pageLink: ""
         }
       ],
-      restTime: "01:01:00"
+      restTime: "01:01:00",
+      maxLeft:-15,//限时兑换商品margin-left的最大值
+      minLeft:-210, //限时兑换商品margin-left的最小值
+      clientX:0 // 鼠标所在位置的clientX坐标
+      
     };
   },
   methods: {
@@ -215,6 +216,24 @@ export default {
         }
         this.restTime = `${hour}:${minute}:${seconds}`;
       }, 1000);
+    },
+
+    // 移动商品图片
+    moveImgs() {
+      //       查找元素ul
+      //       绑定事件 mouseenter
+      // 查找目标元素ul
+      // 修改元素 mousedown
+      // 绑定事件mousemove
+      // 鼠标移入ul区域，并按下鼠标，开始移动鼠标
+      // 获取当前鼠标的clientX，clinetY坐标，以及上一次的clientX和clientY
+      // 判断当前的x，y是大于还是小于上一次的。
+      // 如果大于，就是向右移动，ul的margin-left就要+ (now.clientX-old.clientX)
+      // 如果小于，就是向左移动，ul的margin-left就要-(now.clientX-old.clientX)
+      // 注意：鼠标移动的距离就是：(now.clientX-old.clientX)
+      // 鼠标移动后，计算的margin-left如果小于最小值，margin-left就等于最小值
+      // margin-left如果大于最大值，margin-left就等于最大值。
+      var max=0
     }
   },
   mounted: function() {

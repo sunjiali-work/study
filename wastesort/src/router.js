@@ -4,7 +4,7 @@ import Home from './views/Home.vue'
 import Login from './views/Login.vue'
 import Login2 from './views/Login2.vue'
 import Index from './views/Index.vue'
-import Product from './components/home/Product.vue';
+import Product from './components/home/Discuss.vue';
 Vue.use(Router)
 
 export default new Router({

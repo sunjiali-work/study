@@ -9,9 +9,11 @@ import 'mint-ui/lib/style.css'
 // 引入vant模块
 import Vant from 'vant';
 import 'vant/lib/index.css';
+import { Swipe, SwipeItem } from 'vant';
+
 
 Vue.use(Vant);
-
+Vue.use(Swipe).use(SwipeItem);
 // 在Vue中注册mint-ui
 Vue.use(MintUI);
 
