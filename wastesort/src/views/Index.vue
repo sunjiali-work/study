@@ -1,20 +1,16 @@
 <template>
-  <div>
+  <div class="page-wrap">
     <!-- 子面板 -->
     <mt-tab-container v-model="active">
-      <mt-tab-container-item id="tab-container1">
-        
+      <mt-tab-container-item id="home">
+        <home></home>
       </mt-tab-container-item>
-      <mt-tab-container-item id="tab-container2">
-       
-      </mt-tab-container-item>
-      <mt-tab-container-item id="tab-container3">
-       
-      </mt-tab-container-item>
+      <mt-tab-container-item id="tab-container2">2222222</mt-tab-container-item>
+      <mt-tab-container-item id="tab-container3"></mt-tab-container-item>
     </mt-tab-container>
     <!-- 底部导航 -->
-    <mt-tabbar v-model="active" class="bottbar">
-      <mt-tab-item id="index" @click.native="changeState(0)">
+    <mt-tabbar v-model="active" class="bottbar" fixed>
+      <mt-tab-item id="home" @click.native="changeState(0)">
         <tabicon
           slot="icon"
           :focused="list[0].isSelect"
@@ -60,10 +56,11 @@
 <script>
 //引入字体图标子组件
 import Tabicon from "../components/index/TabIcon.vue";
+import Home from "./Home.vue";
 export default {
   data() {
     return {
-      active: "index",
+      active: "home",
       list: [
         { isSelect: true },
         { isSelect: false },
@@ -74,7 +71,10 @@ export default {
     };
   },
   methods: {
+    
     changeState(num) {
+      // 功能：切换页面
+      //num 代表的是要切换第几个导航页面
       for (var i = 0; i < this.list.length; i++) {
         if (i == num) {
           this.list[i].isSelect = true;
@@ -85,15 +85,24 @@ export default {
     }
   },
   components: {
-    tabicon: Tabicon
+    tabicon: Tabicon,
+    home: Home
   }
 };
 </script>
 <style  scoped>
+.page-wrap {
+  overflow: auto;
+  padding-bottom: 42px;
+}
 .bottbar {
-  height: 60px;
+  height: 42px;
   display: flex;
   align-items: center;
+  /* position: fixed;
+  z-index: 2;
+  bottom: 0;
+  left: 0; */
 }
 
 .bottbar img {

@@ -1,25 +1,16 @@
 <template>
+  <!-- 首页 -->
   <div class="area" :style="screenSty">
     <!-- 页面头部 -->
+    <pagetitle :titlename="titleName"></pagetitle>
+
     <!-- 当页面滚动过一定距离，页面头部就显示当前页面名称 -->
     <!-- 给当前页面绑定滚动事件，判断滚动距离 -->
     <!-- 如果==某个距离值，就隐藏日期，显示首页名称 -->
     <!-- 如果<某个距离值，就显示日期，隐藏头部 -->
     <!-- 当页面滚动的距离未超过指定距离，就显示日期 -->
     <!-- 主体 -->
-    <div class="page_title">
-      <div>
-        <span>{{titleName}}</span>
-        <div class="page_title_icon">
-          <router-link to class="title_icon">
-            <img :src="require('../assets/home/u23.png')" />
-          </router-link>
-          <router-link to class="title_icon">
-            <img :src="require('../assets/home/u22.png')" />
-          </router-link>
-        </div>
-      </div>
-    </div>
+
     <div class="homecon">
       <!-- 垃圾收集时间 -->
       <div class="sort_time">
@@ -36,14 +27,15 @@
         </div>
       </div>
       <!-- 轮播图 -->
-      <mt-swipe :show-indicators="false" class="waste_carousel">
+      <swipe :swipelist="swipeList"></swipe>
+      <!-- <mt-swipe :show-indicators="false" class="waste_carousel">
         <mt-swipe-item>
           <img :src="require('../assets/home/u59.png')" alt />
         </mt-swipe-item>
         <mt-swipe-item>
           <img :src="require('../assets/home/u60.png')" alt />
         </mt-swipe-item>
-      </mt-swipe>
+      </mt-swipe>-->
       <!-- 顶部导航按钮 -->
       <ul class="navBtnArea">
         <fonticonbtn v-for="(navbtn,i) of navBtnList" :key="i" :navbtn="navbtn"></fonticonbtn>
@@ -63,21 +55,6 @@
       <!-- 限时兑换商品 -->
       <div class="time_banner">
         <transproduct></transproduct>
-        <!-- <ul
-          class="ulpros"
-          @touchstart="moveStart"
-          @touchend="moveStop"
-          @touchmove="moveImgs"
-          :style="ulStyle"
-        >
-          <product v-for="(product,i) of productList" :key="i" :goods="product"></product>
-          <router-link to class="moreproduct">
-            <p>查</p>
-            <p>看</p>
-            <p>更</p>
-            <p>多</p>
-          </router-link>
-        </ul>-->
       </div>
       <!-- 热门讨论 -->
       <div class="change_intime hot_discuss">
@@ -100,21 +77,32 @@
 </template>
 
 <script>
-import Fonticonbtn from "../components/home/Fonticonbtn.vue";
-import TransProduct from "../components/home/TransProduct.vue";
-import Disucss from "../components/home/Discuss.vue";
-
+import Fonticonbtn from "../components/home/Fonticonbtn.vue"; //字体图标组件
+import TransProduct from "../components/home/TransProduct.vue"; //兑换商品滚动区域的组件
+import Disucss from "../components/home/Discuss.vue"; //评论组件
+import Pagetitle from "../components/common/PageTitle.vue"; //页面顶部组件
+import Swipe from "../components/common/Swipe.vue"; //轮播图
 export default {
   data() {
     return {
       screenSty: {
-        width: screen.width + "px",
-        height: screen.height + "px"
+        width: screen.width + "px"
+        // height: screen.height + "px"
       },
-      titleName: "星期一",
-      restTime: "01:01:00",
+      swipeList: [
+        //轮播图列表
+        {
+          imgSrc: "../../assets/home/u59.png"
+        },
+        {
+          imgSrc: "../../assets/home/u59.png"
+        }
+      ],
+      titleName: "星期一", //页面顶部的title
+      restTime: "01:01:00", //用于倒计时
 
       navBtnList: [
+        //底部导航菜单
         {
           imgSrc: require("../assets/home/calendar.png"),
           font: "投放日历",
@@ -203,9 +191,10 @@ export default {
   },
   components: {
     fonticonbtn: Fonticonbtn,
-
+    pagetitle: Pagetitle,
     discuss: Disucss,
-    transproduct: TransProduct
+    transproduct: TransProduct,
+    swipe: Swipe //轮播图
   }
 };
 </script>
@@ -218,39 +207,8 @@ export default {
 }
 .homecon {
   width: 90%;
-  height: 100%;
+  /* height: 100%; */
   margin: 0 auto;
-}
-
-.page_title {
-  height: 55px;
-  width: 100%;
-  position: fixed;
-  z-index: 2;
-  top: 0;
-  background: rgba(62, 210, 226, 1);
-}
-.page_title > div {
-  width: 90%;
-  margin: 0 auto;
-  height: 55px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-/* 顶部文字 */
-.page_title > div > span {
-  font-size: 20px;
-  line-height: 20px;
-  color: #fff;
-  font-weight: bold;
-}
-
-.page_title > div > .page_title_icon {
-  width: 50px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
 }
 
 /* 垃圾分类时间 */
