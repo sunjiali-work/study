@@ -11,9 +11,9 @@ Vue.use(Router)
 export default new Router({
   routes: [
     {
-      path: '/icon',
-      name: 'Product',
-      component: Product
+      path: '/index',
+      name: 'Index',
+      component: Index
     },
     {
       path: '/change',
@@ -22,8 +22,8 @@ export default new Router({
     },
     {
       path: '/',
-      name: 'Index',
-      component: Index
+      name: 'Home',
+      component: Home
     },
     {
 

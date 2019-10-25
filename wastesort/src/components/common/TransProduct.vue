@@ -22,34 +22,39 @@ export default {
     return {
       productList: [
         {
-          imgUrl: require("../../assets/product/1.png"),
+          imgUrl: require("../../assets/change_product/1.png"),
           nowmoney: "125" + "币",
           oldmoney: "100"
         },
         {
-          imgUrl: require("../../assets/product/1.png"),
+          imgUrl: require("../../assets/change_product/2.png"),
           nowmoney: "125" + "币",
           oldmoney: "100"
         },
         {
-          imgUrl: require("../../assets/product/1.png"),
+          imgUrl: require("../../assets/change_product/3.png"),
           nowmoney: "125" + "币",
           oldmoney: "100"
         },
         {
-          imgUrl: require("../../assets/product/1.png"),
+          imgUrl: require("../../assets/change_product/4.png"),
           nowmoney: "125" + "币",
           oldmoney: "100"
         },
         {
-          imgUrl: require("../../assets/product/1.png"),
+          imgUrl: require("../../assets/change_product/5.png"),
+          nowmoney: "125" + "币",
+          oldmoney: "100"
+        },
+        {
+          imgUrl: require("../../assets/change_product/5.png"),
           nowmoney: "125" + "币",
           oldmoney: "100"
         }
       ], //商品列表
 
       maxLeft: -15, //限时兑换商品margin-left的最大值
-      minLeft: -210, //限时兑换商品margin-left的最小值
+      minLeft: -310, //限时兑换商品margin-left的最小值
       clientX1: 0, // 鼠标所在位置的clientX坐标
       clientX2: 0,
       canMove: false, //是否能移动
