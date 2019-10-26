@@ -4,16 +4,16 @@ import Home from './views/Home.vue'
 import Change from './views/Exchange.vue'
 import Login from './views/Login.vue'
 
-import Index from './views/Index.vue'
+import Near from './views/Near.vue'
 import Product from './components/home/Discuss.vue';
 Vue.use(Router)
 
 export default new Router({
   routes: [
     {
-      path: '/index',
-      name: 'Index',
-      component: Index
+      path: '/near',
+      name: 'Near',
+      component: Near
     },
     {
       path: '/change',

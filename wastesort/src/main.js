@@ -9,11 +9,14 @@ import 'mint-ui/lib/style.css'
 // 引入vant模块
 import Vant from 'vant';
 import 'vant/lib/index.css';
-import { Swipe, SwipeItem } from 'vant';
-
+import BaiduMap from 'vue-baidu-map'; //使用百度地图
+Vue.use(BaiduMap, {
+  // ak 是在百度地图开发者平台申请的密钥 详见 http://lbsyun.baidu.com/apiconsole/key */
+  ak: 'tefv1GFSbi8d4m15D7Rx55H832RGOzCS'
+});
 
 Vue.use(Vant);
-Vue.use(Swipe).use(SwipeItem);
+
 // 在Vue中注册mint-ui
 Vue.use(MintUI);
 

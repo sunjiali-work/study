@@ -5,10 +5,12 @@
       <mt-tab-container-item id="index">
         <index></index>
       </mt-tab-container-item>
+      <mt-tab-container-item id="near">
+        <near></near>
+      </mt-tab-container-item>
       <mt-tab-container-item id="exchange">
         <exchange></exchange>
       </mt-tab-container-item>
-      <mt-tab-container-item id="tab-container3"></mt-tab-container-item>
     </mt-tab-container>
     <!-- 底部导航 -->
     <mt-tabbar v-model="active" class="bottbar" fixed>
@@ -59,6 +61,7 @@
 //引入字体图标子组件
 import Tabicon from "../components/index/TabIcon.vue";
 import Index from "./Index.vue";
+import Near from "./Near.vue";
 import Exchange from "./Exchange.vue"; //兑换商城
 export default {
   data() {
@@ -88,6 +91,7 @@ export default {
   },
   components: {
     tabicon: Tabicon,
+    near:Near,
     index: Index, //首页
     exchange: Exchange //兑换商城
   }
