@@ -5,11 +5,16 @@ import Change from './views/Exchange.vue'
 import Login from './views/Login.vue'
 
 import Near from './views/Near.vue'
-import Product from './components/home/Discuss.vue';
+import Calendar from './components/common/Calendar.vue';
 Vue.use(Router)
 
 export default new Router({
   routes: [
+    {
+      path: '/cal',
+      name: 'Calendar',
+      component: Calendar
+    },
     {
       path: '/near',
       name: 'Near',
