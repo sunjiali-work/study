@@ -10,8 +10,8 @@
         <div class="week">五</div>
         <div class="week">六</div>
         <div class="week">七</div>
-        <div class="date">
-          <button class="date-btn"></button>
+        <div class="date" v-for="(item,i) of allDays" :key="i">
+          <a href="javascript:;" :class="item.dayClass">{{item.date}}</a>
         </div>
       </div>
     </dir>
@@ -21,7 +21,9 @@
 import DateCalculator from "../../js/calendar.js"; //引入日期相关的计算工具
 export default {
   data() {
-    return {};
+    return {
+      allDays: [] //本页月历的35个日期
+    };
   },
   created() {
     this.setDays();
@@ -33,6 +35,7 @@ export default {
       // 2.计算这个月一号是星期几
       // 获取当前的年月
       var today = DateCalculator.today; //today是个对象
+
       var firstDay = today.year + "-" + today.month + "-" + 1; //获取这个月1日的日期
       var weekDay = DateCalculator.calWeekDay(firstDay); //计算这个月一号是星期几
 
@@ -51,9 +54,13 @@ export default {
         // 只需要天，不需要年月，并把它加进数组头部
         //每个数组元素是个对象，代表一天。对象的属性就是一天中的相关信息
         all.unshift({
-          day: DateCalculator.getTimeType(lastDay).date, //d
+          date: DateCalculator.getTimeType(lastDay).date, //d
           fullDate: lastDay, //yyyy-m-d,
           isToday: false, //是否是今天
+          dayClass: {
+            //如果是今天，就给今天加个圆形的蓝色背景的样式
+            "date-btn": false
+          },
           timeType: DateCalculator.getTimeType(lastDay) //日期类型
         });
 
@@ -61,18 +68,23 @@ export default {
       }
       // 5.将本月的总天数作为循环条件，开始遍历，依次递增，日期+1，添加到数组末尾，直至循环结束。刚好循环到的是今天，加个变量，使得isTody为true，使得具备相应的class属性对应的样式
       var j = 0;
+
       while (j < monDaysThis) {
         var nextDay = DateCalculator.calDate(firstDay, j);
         var isToday = false;
-        if (j == today.day - 1) {
+        if (j == today.date - 1) {
           //循环过程中判断哪一天是今天。true就代表是今天
           //因为j=0，代表1号，j=1,代表2号；而today.day得到的值如果是1就代表1号，2就代表2号，和j所代表的的日期不一致。因此today.day-1
           isToday = true;
         }
         all.push({
-          day: DateCalculator.getTimeType(nextDay).date, //d
+          date: DateCalculator.getTimeType(nextDay).date, //d
           fullDate: nextDay, //yyyy-m-d,
-          isToday: isToday, //是否是今天
+          isToday: isToday, //是否是今天7
+          dayClass: {
+            //如果是今天，就给今天加个圆形的蓝色背景的样式
+            "date-btn": isToday
+          },
           timeType: DateCalculator.getTimeType(nextDay) //日期类型
         }); //0 代表这个月1号，1代表这个月2日，2代表这个月3日，直到j=monDaysThis-1,代表这个月最后一天.
         j++;
@@ -81,22 +93,52 @@ export default {
       // 6.得到上个月的几天以及本月共有多少天后，就来计算下个月这当前这个35天里占有几天。35-这个月总天数-上个月末尾几天=下个月在35天里留有的几天
       var nextMonthGapDays = 35 - lastMonthGapDays - monDaysThis;
       // 然后循环遍历这几天，本月最后一天依次递增+1,添加到数组末尾，直到循环结束。就知道了这35天里的日子。
+
       //获取这个月最后一天的日期
-      var lastDayThisMon = all[arr.length - 1]; //目前为止，数组中最后一个元素就是本月最后一天
+      var lastDayThisMon = all[all.length - 1]["fullDate"]; //目前为止，数组中最后一个元素就是本月最后一天,但是数组的元素是个对象，封装了很多属性，要获得yyyy-m-d格式的日期，必须是lastDayThisMonth.fullDate才可以得到
       var h = 1; //初始值为1，因为上面已经把这个月最后一天追加到数组中了。已经存在最后一天。因此下面的循环不能再从0开始，再把这个月最后一天再添加进数组中。而是要把下个月第一天添加进数组中。因此h要初始化为1，第一次循环时，直接把下月第一天丢进数组
-      while (h <= lastDayThisMon) {
+      while (h <= nextMonthGapDays) {
         var nextDaynextMonth = DateCalculator.calDate(lastDayThisMon, h); //计算下一天日期
+
         all.push({
-          day: DateCalculator.getTimeType(nextDaynextMonth).date, //d
+          date: DateCalculator.getTimeType(nextDaynextMonth).date, //d
           fullDate: nextDaynextMonth, //yyyy-m-d,
           isToday: false, //是否是今天
+          dayClass: {
+            //如果是今天，就给今天加个圆形的蓝色背景的样式
+            "date-btn": false
+          },
           timeType: DateCalculator.getTimeType(nextDaynextMonth) //日期类型
         });
         h++;
+      } //while循环结束
+
+      //创建一个变量，用来保存今天的日期在这35个日期中的数组下标
+      var today_index = "";
+      //用来查找今天这个日期在35个日期中的下标
+      all.forEach(function(item, index, arr) {
+        if (item.date == today.date) {
+          //循环时判断是不是今天
+
+          //是今天，就把今天在35个日期中所在的下标位置赋值给变量today_index  注意：today.day是指周几，today.date是指日期
+          today_index = index;
+        }
+      });
+
+      //如果是今天之前的日子，字体颜色为灰色，是另一个样式属性before；如果是今天以后的日子，字体颜色为黑色，是future的样式属性
+      for (var y = 0; y < all.length; y++) {
+        if (y < today_index) {
+          //就今天之前的日子
+          all[y]["dayClass"]["before"] = true;
+          all[y]["dayClass"]["future"] = false;
+        } else if (y > today_index) {
+          all[y]["dayClass"]["before"] = false;
+          all[y]["dayClass"]["future"] = true;
+        }
       }
-for(var obj of all){
-  console.log(obj.fullDate);
-}
+
+      //获取到35个日期后，将数组all 赋值给数据模型中的变量allDays
+      this.allDays = all;
     }
   }
 };
@@ -105,21 +147,26 @@ for(var obj of all){
 .container {
   width: 375px;
   height: 667px;
+  background: url(../../assets/home/u19.png) no-repeat;
+  background-position: 0 -70px;
 }
 
 .content {
   width: 89.3%;
-  height: 311px;
-  border: 1px solid red;
+  height: 600px;
+  margin: 0 auto;
 }
 
 /* 日历的容器 */
 .calendar {
+  margin-top: 200px;
   width: 100%;
   height: 310px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  border-radius: 8px;
+  box-shadow: 0px 2px 10px rgba(51, 51, 51, 0.349019607843137);
 }
 
 /* 日期容器 ,周几*/
@@ -134,13 +181,31 @@ for(var obj of all){
 .week {
   color: #2bcddd;
   font-size: 12px;
+  font-weight: bold;
 }
 
-/* 日期按钮 */
-.date-btn {
+.date > a {
   display: block;
   width: 35px;
   height: 35px;
   border-radius: 50%;
+  margin: 0 auto;
+  text-align: center;
+  line-height: 35px;
+  font-size: 14px;
+}
+
+/* 日期按钮 */
+.date > .date-btn {
+  background: rgba(62, 210, 226, 1);
+  color: #fff;
+}
+
+.date > .before {
+  color: #ccc;
+}
+
+.date > .future {
+  color: #333;
 }
 </style>

@@ -7,7 +7,7 @@ export default {
     year: new Date().getFullYear(),
     fullDate: function () {
       // return `${this.today.year}-${this.today.month < 0 ? '0' + this.today.month : this.today.month}-${this.today.date < 0 ? '0' + this.today.date : this.today.date}`;
-      return `${this.today.year}-${this.today.month}-${this.today.date}`;
+      return `${this.year}-${this.month}-${this.date}`;
 
     }
   },
@@ -51,8 +51,11 @@ export default {
     参数说明：
      date: 字符串类型 格式："2019-10-26"
      days:为负数，代表计算几天前的日期；为正数，表示计算几天后的日期
+     
      */
+
     var arr = date.split("-");
+
     var time = new Date().setFullYear(parseInt(arr[0]), parseInt(arr[1]) - 1, parseInt(arr[2]));
     var millis = time + (days * 24 * 60 * 60 * 1000);//计算加减N天以后的毫秒数
     time = new Date(millis);
@@ -69,12 +72,14 @@ export default {
      date: 字符串类型 格式："2019-10-26"
      days:为负数，代表计算几天前的日期；为正数，表示计算几天后的日期
      */
+
     var arr = date.split("-");
+
     var time = new Date().setFullYear(parseInt(arr[0]), parseInt(arr[1]) - 1, parseInt(arr[2]));//转为为日期类型
     var weekDay = [7, 1, 2, 3, 4, 5, 6];//用来保存星期天，星期一......
-    console.log(typeof time);
+ 
     var day = new Date(time).getDay();//通过getDay()获取的值，为0时，是星期日，为一时，代表星期一，依次类推
-console.log(day);
+
     return weekDay[day];
 
   },
@@ -87,7 +92,9 @@ console.log(day);
     参数：
     date:字符串类型 格式："2019-10-26"
     */
+
     var arr = date.split("-");
+
     return {
       year: parseInt(arr[0]),
       month: parseInt(arr[1]),
