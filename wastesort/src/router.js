@@ -5,15 +5,21 @@ import Change from './views/Exchange.vue'
 import Login from './views/Login.vue'
 
 import Near from './views/Near.vue'
-import Calendar from './components/common/Calendar.vue';
+import ThrowTime from './views/ThrowTime';
+import Calendar from './components/common/Calendar';
 Vue.use(Router)
 
 export default new Router({
   routes: [
     {
+      path: '/throw',
+      name: 'throw',
+      component: ThrowTime
+    },
+    {
       path: '/cal',
-      name: 'Calendar',
-      component: Calendar
+      name: 'cal',
+      component:Calendar
     },
     {
       path: '/near',
@@ -36,7 +42,7 @@ export default new Router({
       name: 'Login',
       component: Login
     }
-    
+
 
     /*    {
          path: '/',

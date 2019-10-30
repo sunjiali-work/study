@@ -7,7 +7,7 @@ export default {
     year: new Date().getFullYear(),
     fullDate: function () {
       // return `${this.today.year}-${this.today.month < 0 ? '0' + this.today.month : this.today.month}-${this.today.date < 0 ? '0' + this.today.date : this.today.date}`;
-      return `${this.year}-${this.month}-${this.date}`;
+      return `${this.today.year}-${this.today.month}-${this.today.date}`;
 
     }
   },

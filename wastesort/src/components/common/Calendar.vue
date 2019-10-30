@@ -1,20 +1,15 @@
 <template>
-  <!--投放日历-->
-  <div class="container">
-    <dir class="content">
-      <div class="calendar">
-        <div class="week">一</div>
-        <div class="week">二</div>
-        <div class="week">三</div>
-        <div class="week">四</div>
-        <div class="week">五</div>
-        <div class="week">六</div>
-        <div class="week">七</div>
-        <div class="date" v-for="(item,i) of allDays" :key="i">
-          <a href="javascript:;" :class="item.dayClass">{{item.date}}</a>
-        </div>
-      </div>
-    </dir>
+  <div class="calendar">
+    <div class="week">一</div>
+    <div class="week">二</div>
+    <div class="week">三</div>
+    <div class="week">四</div>
+    <div class="week">五</div>
+    <div class="week">六</div>
+    <div class="week">七</div>
+    <div class="date" v-for="(item,i) of allDays" :key="i">
+      <a href="javascript:;" :class="item.dayClass">{{item.date}}</a>
+    </div>
   </div>
 </template>
 <script>
@@ -144,22 +139,11 @@ export default {
 };
 </script>
 <style  scoped>
-.container {
-  width: 375px;
-  height: 667px;
-  background: url(../../assets/home/u19.png) no-repeat;
-  background-position: 0 -70px;
-}
 
-.content {
-  width: 89.3%;
-  height: 600px;
-  margin: 0 auto;
-}
 
 /* 日历的容器 */
 .calendar {
-  margin-top: 200px;
+  background: #fff;
   width: 100%;
   height: 310px;
   display: flex;

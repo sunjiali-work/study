@@ -102,6 +102,7 @@ export default {
   background-position: 0 -70px;
   width: 100%;
 }
+
 /* 页面主体内容 */
 .change-container > .content {
   width: 337.5px;
