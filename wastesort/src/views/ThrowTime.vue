@@ -9,6 +9,25 @@
     <div class="content">
       <!-- 日历 -->
       <calendar></calendar>
+      <!-- 今日投放 -->
+      <div></div>
+      <!-- 明日投放 -->
+      <div class="throw-day">
+        <div class="day-title">
+          <i class="day-sign1"></i>
+          <span>今日投放</span>
+        </div>
+        <div class="throw-daytime">
+          <p>
+            <span>7:30-8:30</span>
+            <span>湿垃圾</span>
+          </p>
+          <p>
+            <span>19:00-20:00</span>
+            <span>干垃圾</span>
+          </p>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -27,6 +46,15 @@ export default {
 };
 </script>
 <style  scoped>
+/* 投放时间表容器 */
+.throw-day {
+  width: 100%;
+  height:120px;
+  margin-top: 25px;
+  border-radius: 4px;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.349019607843137);
+}
+
 .throw-container {
   width: 375px;
   height: 667px;
@@ -41,7 +69,7 @@ export default {
   align-items: center;
   justify-content: left;
   flex-wrap: nowrap;
-  margin-bottom:30px;
+  margin-bottom: 30px;
 }
 
 /* 返回按钮 */
@@ -64,11 +92,9 @@ export default {
 }
 
 .content {
-
   width: 89.3%;
   height: 300px;
   margin: 0 auto;
-
 }
 .content:before {
   display: table;
