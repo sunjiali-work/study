@@ -32,6 +32,11 @@ export default new Router({
       component: Change
     },
     {
+      path: '/home',
+      name: 'Home',
+      component: Home
+    },
+    {
       path: '/',
       name: 'Home',
       component: Home

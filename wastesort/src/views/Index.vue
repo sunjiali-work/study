@@ -108,7 +108,7 @@ export default {
         {
           imgSrc: require("../assets/home/calendar.png"),
           font: "投放日历",
-          pageLink: ""
+          pageLink: "/throw"
         },
         {
           imgSrc: require("../assets/home/u122.png"),
