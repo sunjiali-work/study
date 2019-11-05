@@ -41,14 +41,14 @@ export default {
 /* 一个商品容器 */
 
 .product-item {
-  width: 165px;
-  height: 240px;
+  width: 13.5rem;
+  height:20rem;
   background: #fff;
   border-radius: 4px;
   box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.349019607843137);
   /* border: 1px solid red; */
   overflow: hidden;
-  margin-bottom: 20px;
+  margin-bottom: 1.66rem;
 }
 
 /* 商品链接 */
@@ -69,14 +69,14 @@ export default {
 }
 /* 商品图片 */
 .product-img {
-  width: 165px;
-  height: 165px;
+  width: 17.33rem;
+  height: 17.33rem;
 }
 
 /* 商品名字 */
 .product-name {
   width: 100%;
-  height: 35px;
+  height: 2.91rem;
   margin-top: 2px;
   padding: 0 7px;
   line-height: 17px;
@@ -86,7 +86,7 @@ export default {
 }
 /* 商品价格 */
 .product-price {
-  width: 151px;
+  width: 12.58rem;
   height: 19px;
   margin-top: -8px;
   font-size: 14px;

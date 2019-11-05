@@ -6,21 +6,29 @@ import Login from './views/Login.vue'
 
 import Near from './views/Near.vue'
 import ThrowTime from './views/ThrowTime';
-import Calendar from './components/common/Calendar';
+import ProductDetail from './views/ProductDetail.vue';
+
+
 Vue.use(Router)
 
 export default new Router({
   routes: [
     {
+      path: '/',
+      name: 'Home',
+      component: Home
+    },
+    {
+      path: '/index',
+      name: 'Home',
+      component: Home
+    },
+    {
       path: '/throw',
       name: 'throw',
       component: ThrowTime
     },
-    {
-      path: '/cal',
-      name: 'cal',
-      component:Calendar
-    },
+    
     {
       path: '/near',
       name: 'Near',
@@ -36,18 +44,19 @@ export default new Router({
       name: 'Home',
       component: Home
     },
-    {
-      path: '/',
-      name: 'Home',
-      component: Home
-    },
+
     {
 
       path: '/login',
       name: 'Login',
       component: Login
-    }
+    },
+    {
 
+      path: '/prodetail',
+      name: 'prodetail',
+      component: ProductDetail
+    },
 
     /*    {
          path: '/',

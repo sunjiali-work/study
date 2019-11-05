@@ -100,12 +100,13 @@ export default {
 .change-container {
   background: url(../assets/home/u19.png) no-repeat;
   background-position: 0 -70px;
-  width: 100%;
+  /* width: 100%; */
+  width:100vw;
 }
 
 /* 页面主体内容 */
 .change-container > .content {
-  width: 337.5px;
+  width: 90vw;
   margin: 0 auto;
   padding-top: 45px;
   overflow: auto;
@@ -139,7 +140,7 @@ export default {
 }
 
 .change_intime > .change_title > p {
-  width: 50%;
+  width: 54%;
   display: flex;
   justify-content: space-between;
 }

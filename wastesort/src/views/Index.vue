@@ -1,6 +1,6 @@
 <template>
   <!-- 首页 -->
-  <div class="area" :style="screenSty">
+  <div class="area" >
     <!-- 页面头部 -->
     <pagetitle :titlename="titleName"></pagetitle>
 
@@ -28,30 +28,14 @@
       </div>
       <!-- 轮播图 -->
       <swipe :swipelist="swipeList"></swipe>
-      <!-- <mt-swipe :show-indicators="false" class="waste_carousel">
-        <mt-swipe-item>
-          <img :src="require('../assets/home/u59.png')" alt />
-        </mt-swipe-item>
-        <mt-swipe-item>
-          <img :src="require('../assets/home/u60.png')" alt />
-        </mt-swipe-item>
-      </mt-swipe>-->
+     
       <!-- 顶部导航按钮 -->
       <ul class="navBtnArea">
         <fonticonbtn v-for="(navbtn,i) of navBtnList" :key="i" :navbtn="navbtn"></fonticonbtn>
       </ul>
       <!-- 限时兑换标题 -->
       <change-in-time :restTime="restTime"></change-in-time>
-      <!-- <div class="change_intime">
-        <div class="change_title">
-          <p>
-            <i></i>
-            <span>限时兑换</span>
-          </p>
-          <span>{{this.restTime}}</span>
-        </div>
-        <router-link to class="moreLink">更多</router-link>
-      </div>-->
+      
 
       <!-- 限时兑换商品 -->
       <div class="time_banner">
@@ -84,13 +68,11 @@ import Disucss from "../components/home/Discuss.vue"; //评论组件
 import Pagetitle from "../components/common/PageTitle.vue"; //页面顶部组件
 import Swipe from "../components/common/Swipe.vue"; //轮播图
 import ChangeInTime from "../components/common/ChangeInTime.vue"; //引入倒计时的兑换商标组件
+import calRestTime from "../js/calRestTime"; //引入倒计时时间计算器
 export default {
   data() {
     return {
-      screenSty: {
-        width: screen.width + "px"
-        // height: screen.height + "px"
-      },
+ 
       swipeList: [
         //轮播图列表
         {
@@ -129,69 +111,9 @@ export default {
     };
   },
   mounted: function() {
-    this.changeTime();
+    calRestTime.changeTime.apply(this);
   },
-  methods: {
-    //倒计时
-    changeTime() {
-      /**
-       把时间转化为秒
-       1.通过：分割字符串，并转化为整数
-       2.将小时、分数分别乘以*60分钟，*60秒，+最后一个整数描述
-       就将时间转化为秒
-       3.用周期性定时器循环-1秒
-       计算小时
-       1.剩余秒数除以3600秒（1小时=3600秒）
-       2.得到商和余数
-       3.parseInt() 获取到整数类型的商，不用四舍五入
-       4.取余 %
-       5.判断是否小于<10,<10，加0
-         
-
-
-       计算分钟
-       1.计算分钟：之前取余的数除以60秒，parseInt() 获取到整数类型的商，不用四舍五入
-       2.取余
-       3.判断结果是否<10，小于10,前面就加0
-
-       计算秒
-       1.之前取余的数，是否<10，小于10,前面就加0
-       
-
-       */
-
-      var timer = setInterval(() => {
-        var [seconds, minute, hour] = [0, 0, 0];
-        var timeArr = this.restTime.split(":");
-        hour = parseInt(timeArr[0]);
-        minute = parseInt(timeArr[1]);
-        seconds = parseInt(timeArr[2]);
-        var total = hour * 60 * 60 + minute * 60 + seconds;
-        if (total == 1) {
-          clearInterval(timer);
-        }
-        total -= 1;
-        hour = parseInt(total / (60 * 60));
-        minute = parseInt((total % (60 * 60)) / 60);
-        seconds = parseInt((total % (60 * 60)) % 60);
-        hour == 0 ? "00" : hour < 10 ? "0" + hour : hour;
-        minute == 0 ? "00" : minute < 10 ? "0" + minute : minute;
-        seconds == 0 ? "00" : seconds;
-        if (hour < 10) {
-          hour = "0" + hour;
-        }
-
-        if (minute < 10) {
-          minute = "0" + minute;
-        }
-
-        if (seconds < 10) {
-          seconds = "0" + seconds;
-        }
-        this.restTime = `${hour}:${minute}:${seconds}`;
-      }, 1000);
-    }
-  },
+  methods: {},
 
   components: {
     fonticonbtn: Fonticonbtn,
@@ -206,6 +128,7 @@ export default {
 <style scoped>
 /* 页面容器 */
 .area {
+  width:100vw;
   background: url(../assets/home/u19.png) no-repeat;
   background-position: 0 -70px;
   /* position:relative; */
@@ -246,7 +169,8 @@ export default {
 .special_wettime {
   display: inline-block;
   background: rgba(254, 94, 117, 1);
-  width: 35px;
+  width: 9.3vw;
+  /* width:35px; */
   height: 19px;
   line-height: 19px;
   text-align: center;
@@ -318,10 +242,6 @@ export default {
   color: #ccc;
 }
 
-/* .discuss-title {
-  width: 100%;
-  height: 33px;
-} */
 /* 热门讨论 title */
 .hot_discuss > .change_title > p > i {
   display: block;

@@ -25,7 +25,7 @@ export default {
       this.center.lat = 39.915;
       this.zoom = 15;
       this.pinchToZoom = true;
-   alert(this.zoom);
+   
     }
   }
 };
