@@ -39,9 +39,10 @@
       </div>
 
       <!-- 猜你喜欢的商品列表 -->
-      <product-list :productList="productList"></product-list>
+
+      <product-list ></product-list> 
       <!-- 没有更多 -->
-      <div class="no-more">没有更多内容了</div>
+      <no-more></no-more>
     </div>
   </div>
 </template>
@@ -51,6 +52,7 @@ import Swipe from "../components/common/Swipe.vue";
 import ChangeInTime from "../components/common/ChangeInTime.vue";
 import TransProduct from "../components/common/TransProduct.vue"; //兑换商品滚动区域的组件
 import ProductList from "../components/product/ProductList.vue"; //兑换商品滚动区域的组件
+import NoMore from "../components/common/NoMore.vue";//没有更多了
 
 export default {
   data() {
@@ -65,25 +67,8 @@ export default {
         {
           imgSrc: require("../assets/home/u60.png")
         }
-      ],
-      productList: [
-        {
-          name: "夏季必备简约风扇",
-          price: 250
-        },
-        {
-          name: "夏季必备简约风扇",
-          price: 250
-        },
-        {
-          name: "夏季必备简约风扇",
-          price: 250
-        },
-        {
-          name: "夏季必备简约风扇",
-          price: 250
-        }
       ]
+ 
     };
   },
   components: {
@@ -91,7 +76,8 @@ export default {
     swipe: Swipe,
     ChangeInTime: ChangeInTime,
     transproduct: TransProduct,
-    productList: ProductList //猜你喜欢的商品列表
+    productList: ProductList, //猜你喜欢的商品列表
+    NoMore //没有更多了
   }
 };
 </script>
@@ -181,13 +167,5 @@ export default {
   border: 2px solid rgba(255, 94, 129, 1);
 }
 
-/* 页面底部 -没有更多内容*/
-.no-more {
-  margin: 20px 0;
-  width: 100%;
-  text-align: center;
-  font-size: 14px;
-  font-weight: bold;
-  color: #ccc;
-}
+
 </style>

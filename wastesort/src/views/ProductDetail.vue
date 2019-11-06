@@ -1,7 +1,7 @@
 <template>
-  <div class="pro-container">
+  <div class="pro-container" @touchstart="start" @touchend="stop" @touchmove="move">
     <!-- 页面标题 -->
-    <div class="page-title" v-show="false">
+    <div class="page-title" v-show="showTitle">
       <div>
         <router-link to="/index" class="goback"></router-link>
         <span>商品详情</span>
@@ -39,11 +39,15 @@
     <!-- 服务详情 -->
     <service-bar class="service-detail" :pro="pro"></service-bar>
     <!-- 商品参数 -->
-    <pro-param :pro="pro" class="pro-param" ></pro-param>
+    <pro-param :pro="pro" class="pro-param"></pro-param>
     <!-- 商品详情 -->
+    <detail-img :pro="pro" class="detail-imgs"></detail-img>
     <!-- 猜你喜欢 -->
+    <guess-like class="guess-like"></guess-like>
     <!-- 没有更多内容了 -->
+    <no-more></no-more>
     <!-- 立即购买 -->
+    <buy-soon></buy-soon>
   </div>
 </template>
 <script>
@@ -53,9 +57,17 @@ import calRestTime from "../js/calRestTime";
 import ServiceBar from "../components/prodetail/ServiceDetail"; //服务详情
 
 import ProParam from "../components/prodetail/ProParam"; // 商品参数
+import DetailImg from "../components/prodetail/DetailImg"; //商品详情
+
+import GuessLike from "../components/prodetail/GuessLike"; // 猜你喜欢
+import NoMore from "../components/common/NoMore"; //没有更多了
+import BuySoon from "../components/prodetail/BuySoon"; //立即购买
 export default {
   data() {
     return {
+      canMove: false,
+      showTitle: false,
+      pageY: 0,
       pro: {
         count: 5,
         material: "树脂、铜",
@@ -88,7 +100,12 @@ export default {
             color: "淡绿色"
           }
         ],
-        chosen: 1
+        chosen: 1,
+        detailImgs: [
+          {
+            path: require("../assets/prodetail/u4040.png")
+          }
+        ]
       },
       restTime: "15:00:00",
       productImgs: [
@@ -102,10 +119,37 @@ export default {
   mounted() {
     calRestTime.changeTime.apply(this);
   },
+  methods: {
+    start($event) {
+      this.showPageTitle();
+    },
+    move($event) {
+      this.showPageTitle();
+    },
+    stop($event) {
+      this.showPageTitle();
+    },
+    showPageTitle() {
+      //获取滚动条的位置
+      var scrollTop = document.documentElement.scrollTop;
+
+      if (scrollTop > 54) {
+        //页面向下滚动的距离超过了page-title元素的高度，就显示page-title
+        this.showTitle = true;
+      } else {
+        //页面滚动，没有超过page-title 元素的高度，就不用显示page-title
+        this.showTitle = false;
+      }
+    }
+  },
   components: {
     ProSwipe,
     ServiceBar,
-    ProParam
+    ProParam,
+    DetailImg,
+    GuessLike,
+    NoMore,
+    BuySoon
   }
 };
 </script>
@@ -114,6 +158,8 @@ export default {
 .pro-container {
   width: 100 vw;
   height: 100 vh;
+  padding-bottom: 80px;
+  position: relative;
 }
 
 .page-title {
@@ -122,6 +168,7 @@ export default {
   position: fixed;
   top: 0;
   left: 0;
+  z-index: 3;
   background: #2bcddd;
   display: flex;
   justify-content: space-between;
@@ -148,10 +195,10 @@ export default {
 
 /* 购物车 */
 .page-title .cart {
-  width: 2.1rem;
-  height: 1.4rem;
+  width: 2.2rem;
+  height: 2rem;
   background: url(../assets/prodetail/u3941.png) no-repeat;
-  background-position: 60% 50%;
+  background-position: 50% 50%;
   background-size: contain;
   margin-right: 1rem;
 }
@@ -196,13 +243,21 @@ export default {
   right: 1.5rem;
 }
 
-/* 商品简介、服务详情 */
+/* 商品简介、服务详情,商品参数，猜你喜欢 -宽、内边距*/
 .short-intro,
-.service-detail,.pro-param {
+.service-detail,
+.pro-param,
+.guess-like {
   /* margin-top: 10px; */
   width: 100%;
   /* height: 7rem; */
   padding: 0 1.66rem;
+}
+
+/* 商品简介、服务详情,商品参数 -下边框/
+.short-intro,
+.service-detail,
+.pro-param {
   border-bottom: 8px solid #ecfdfa;
 }
 
@@ -257,5 +312,10 @@ export default {
 .short-intro > .rest-time > span:last-child {
   font-size: 12px;
   color: #ff5e81;
+}
+
+/* 商品详情 */
+.detail-imgs {
+  width: 100%;
 }
 </style>

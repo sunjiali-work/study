@@ -1,6 +1,6 @@
 <template>
   <li class="goods_item">
-    <router-link to class="goods_link">
+    <router-link to="/prodetail" class="goods_link">
       <!-- require('../../assets/product/1.png') -->
       <img :src="goods.imgUrl" alt class="goods_img" />
       <p class="nowmoney">{{goods.nowmoney}}</p>

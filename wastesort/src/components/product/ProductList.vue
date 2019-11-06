@@ -1,5 +1,5 @@
 <template>
-  <!-- 商品列表 -->
+  <!-- 猜你喜欢--商品列表 -->
   <div class="product-list">
     <!-- 一个商品-容器 -->
     <div class="product-item" v-for="(item,i) in productList" :key="i">
@@ -8,10 +8,10 @@
         <div class="product-info">
           <!-- 商品图片 -->
           <img :src="require('../../assets/product/1.png')" alt class="product-img" />
-          <!-- 商品名称 -->
-          <p class="product-name">{{item.name}}</p>
         </div>
         <!-- 商品价格 -->
+        <!-- 商品名称 -->
+        <p class="product-name">{{item.name}}</p>
         <p class="product-price">{{item.price}}币</p>
       </router-link>
     </div>
@@ -20,10 +20,26 @@
 <script>
 export default {
   data() {
-    return {};
-  },
-  props: {
-    productList: Array
+    return {
+      productList: [
+        {
+          name: "夏季必备简约风扇",
+          price: 250
+        },
+        {
+          name: "夏季必备简约风扇",
+          price: 250
+        },
+        {
+          name: "夏季必备简约风扇",
+          price: 250
+        },
+        {
+          name: "夏季必备简约风扇",
+          price: 250
+        }
+      ]
+    };
   }
 };
 </script>
@@ -41,8 +57,9 @@ export default {
 /* 一个商品容器 */
 
 .product-item {
-  width: 13.5rem;
-  height:20rem;
+  /* width: 13.5rem; */
+  width: 43vw;
+  /* height: 22rem; */
   background: #fff;
   border-radius: 4px;
   box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.349019607843137);
@@ -63,21 +80,21 @@ export default {
 /* 商品信息 */
 .product-info {
   width: 100%;
-  height: 208px;
+  /* height: 235px; */
   overflow: hidden;
   text-align: left;
 }
 /* 商品图片 */
 .product-img {
-  width: 17.33rem;
-  height: 17.33rem;
+  width: 100%;
+  height: 43vw;
 }
 
 /* 商品名字 */
 .product-name {
   width: 100%;
-  height: 2.91rem;
-  margin-top: 2px;
+  /* height: 2.91rem; */
+  margin-top: 3px;
   padding: 0 7px;
   line-height: 17px;
   font-size: 14px;
@@ -86,9 +103,11 @@ export default {
 }
 /* 商品价格 */
 .product-price {
-  width: 12.58rem;
+  /* width: 12.58rem; */
+  width: 100%;
+ padding: 0 7px;
   height: 19px;
-  margin-top: -8px;
+  margin: 5px 0;
   font-size: 14px;
   line-height: 19px;
   color: #333;

@@ -38,6 +38,10 @@ export default {
   border-radius: 6px;
   overflow: hidden;
 }
+.img-item > img {
+  width: 100%;
+  height: 100%;
+}
 
 .indicator {
   width: 4rem;
@@ -47,7 +51,7 @@ export default {
   position: absolute;
   border-radius: 10px;
   background: #000;
-  font-size:12px;
+  font-size: 12px;
   color: #fff;
   text-align: center;
   opacity: 0.3;

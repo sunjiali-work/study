@@ -75,7 +75,7 @@ export default {
     },
     // 移动商品图片
     moveImgs($event) {
-      // console.log("move:"+$event.touches[0])
+   
       //
       // 鼠标移入ul区域，并按下鼠标，
       // 获取这时鼠标的clientX，clinetY坐标，开始移动鼠标后停下，记录移动后停下新的clientX和clientY
@@ -105,7 +105,7 @@ export default {
           // margin-left如果大于最大值，margin-left就等于最大值。（移动到最右边）
           this.marLeft = this.maxLeft;
         }
-        // console.log(this.marLeft);
+       
         this.ulStyle.marginLeft = this.marLeft + "px";
         this.clientX1 = this.clientX2;
       }
